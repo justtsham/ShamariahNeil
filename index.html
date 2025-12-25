@@ -5,36 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shamariah Neil | Voice Actor</title>
   <meta name="description" content="Shamariah Neil — Commercial Voice Actor" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
-   :root{
-  --cream:#f9f3ec;
-  --cream2:#fffaf5;
-  --pink1:#f6a6c9;
-  --pink2:#fbd3e6;
-  --pinkGlow: rgba(246,166,201,.35);
-  --text:#2a0820;
-  --card: rgba(255,255,255,.85);
-  --border: rgba(246,166,201,.45);
-}
-
+    :root{
+      --cream:#f9f3ec;
+      --cream2:#fffaf5;
+      --pink1:#f6a6c9;
+      --pink2:#fbd3e6;
+      --pinkGlow: rgba(246,166,201,.35);
+      --text:#2a0820;
+      --card: rgba(255,255,255,.9);
+      --border: rgba(246,166,201,.45);
+    }
 
     *{ box-sizing:border-box; }
 
     body{
-  margin:0;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:
-    radial-gradient(600px 400px at 85% 15%, var(--pinkGlow), transparent 60%),
-    radial-gradient(500px 350px at 15% 80%, rgba(251,211,230,.35), transparent 60%),
-    linear-gradient(180deg, var(--cream), var(--cream2));
-  color:var(--text);
-}
-
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:
+        radial-gradient(600px 400px at 85% 15%, var(--pinkGlow), transparent 60%),
+        radial-gradient(500px 350px at 15% 80%, rgba(251,211,230,.35), transparent 60%),
+        linear-gradient(180deg, var(--cream), var(--cream2));
+      color:var(--text);
+    }
 
     .wrap{
       max-width:1100px;
@@ -42,13 +41,13 @@
       padding:32px 18px 64px;
     }
 
-    /* ===== HERO LAYOUT ===== */
+    /* ===== HERO ===== */
     .hero{
       display:grid;
       grid-template-columns: 1fr 1.2fr;
       gap:24px;
       align-items:center;
-      background: rgba(255,255,255,.55);
+      background: rgba(255,255,255,.6);
       border-radius:28px;
       padding:24px;
       box-shadow: 0 30px 60px rgba(0,0,0,.15);
@@ -63,13 +62,12 @@
     }
 
     h1{
-  font-family: 'Playfair Display', serif;
-  font-size:46px;              /* slightly larger, elegant */
-  margin:0;
-  letter-spacing:.8px;
-  color: var(--pink1);
-}
-
+      font-family:'Playfair Display', serif;
+      font-size:46px;
+      margin:0;
+      letter-spacing:.8px;
+      color:var(--pink1);
+    }
 
     .tag{
       margin:10px 0 16px;
@@ -95,45 +93,43 @@
       border-radius:14px;
       text-decoration:none;
       font-weight:800;
+      cursor:pointer;
     }
 
     .primary{
       background: linear-gradient(90deg, var(--pink1), var(--pink2));
       color:#3a0026;
+      border:none;
     }
 
     .ghost{
       border:2px solid var(--pink1);
+      background:transparent;
       color:#3a0026;
     }
 
     /* ===== SECTIONS ===== */
-    section{
-      margin-top:42px;
-    }
-
-    section h2{
-      font-size:22px;
-      margin-bottom:12px;
-    }
+    section{ margin-top:42px; }
+    section h2{ font-size:22px; margin-bottom:12px; }
 
     .card{
-      background: var(--card);
+      background:var(--card);
       border-radius:22px;
       padding:18px;
       border:1px solid var(--border);
-      box-shadow: 0 14px 28px rgba(0,0,0,.12);
+      box-shadow:0 14px 28px rgba(0,0,0,.12);
       max-width:600px;
     }
 
     audio{
       width:100%;
-      margin-top:10px;
+      margin-top:12px;
+      display:block;
     }
 
     .small{
       font-size:14px;
-      opacity:.8;
+      opacity:.85;
     }
 
     footer{
@@ -143,32 +139,28 @@
       text-align:center;
     }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 900px){
-      .hero{
-        grid-template-columns: 1fr;
-      }
-      h1{
-        font-size:32px;
-      }
+    /* ===== CONTACT ICON STYLES (scoped safely) ===== */
+    #contact .card p{
+      display:flex;
+      align-items:center;
+      gap:8px;
     }
-/* ===== CONTACT ICON STYLES ===== */
-.card p{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
 
-.card a{
-  color: var(--pink1);
-  font-weight:700;
-  text-decoration:none;
-}
+    #contact .card a{
+      color:var(--pink1);
+      font-weight:700;
+      text-decoration:none;
+    }
 
-.card a:hover{
-  text-decoration:underline;
-}
+    #contact .card a:hover{
+      text-decoration:underline;
+    }
 
+    /* ===== MOBILE ===== */
+    @media (max-width:900px){
+      .hero{ grid-template-columns:1fr; }
+      h1{ font-size:34px; }
+    }
   </style>
 </head>
 
@@ -177,10 +169,8 @@
 
     <!-- HERO -->
     <div class="hero">
-      <!-- LEFT: BIG HEADSHOT -->
       <img src="Commercial Headshot.jpg" alt="Commercial Headshot">
 
-      <!-- RIGHT: INFO -->
       <div>
         <h1>Shamariah Neil</h1>
         <div class="tag">Commercial Voice Actor • Bright • Believable • Confident</div>
@@ -200,38 +190,60 @@
     <!-- DEMOS -->
     <section id="demos">
       <h2>Commercial Demo</h2>
+
       <div class="card">
         <div class="small">Conversational • Trustworthy • Lifestyle brands</div>
-        <audio controls src="ShamariahNeil_CommercialDemo.mp3"></audio>
+
+        <!-- MOST COMPATIBLE AUDIO SETUP -->
+        <audio
+          id="demoAudio"
+          controls
+          playsinline
+          preload="metadata"
+          src="https://shamariahneil.com/commercial-demo.mp3?v=9">
+          Your browser does not support the audio element.
+        </audio>
+
+        <p class="small" style="margin-top:10px;">
+          <a href="https://shamariahneil.com/commercial-demo.mp3" target="_blank" rel="noopener">
+            Open / Download Demo
+          </a>
+        </p>
+
+        <!-- Manual play fallback -->
+        <button class="btn primary" type="button"
+          onclick="document.getElementById('demoAudio').play()">
+          ▶️ Play Demo
+        </button>
       </div>
     </section>
 
     <!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
 
-    <p class="small">
-      📧 <strong>Email:</strong>
-      <a href="mailto:justt.sham@gmail.com">justt.sham@gmail.com</a>
-    </p>
+        <p class="small">
+          📧 <strong>Email:</strong>
+          <a href="mailto:justt.sham@gmail.com">justt.sham@gmail.com</a>
+        </p>
 
-    <p class="small">
-      ▶️ <strong>YouTube:</strong>
-      <a href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer">
-        @justsham08
-      </a>
-    </p>
+        <p class="small">
+          ▶️ <strong>YouTube:</strong>
+          <a href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer">
+            @justsham08
+          </a>
+        </p>
 
-    <p class="small">
-      💬 <strong>Discord:</strong>
-      <a href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer">
-        @justsham_
-      </a>
-    </p>
+        <p class="small">
+          💬 <strong>Discord:</strong>
+          <a href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer">
+            @justsham_
+          </a>
+        </p>
 
-  </div>
-</section>
+      </div>
+    </section>
 
     <footer>
       © <span id="y"></span> Shamariah Neil • Voice Actor
