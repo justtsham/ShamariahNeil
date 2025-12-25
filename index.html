@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shamariah Neil | Voice Actor</title>
+  <meta name="description" content="Shamariah Neil — Commercial Voice Actor" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+
+  <style>
+   :root{
+  --cream:#f9f3ec;
+  --cream2:#fffaf5;
+  --pink1:#f6a6c9;
+  --pink2:#fbd3e6;
+  --pinkGlow: rgba(246,166,201,.35);
+  --text:#2a0820;
+  --card: rgba(255,255,255,.85);
+  --border: rgba(246,166,201,.45);
+}
+
+
+    *{ box-sizing:border-box; }
+
+    body{
+  margin:0;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:
+    radial-gradient(600px 400px at 85% 15%, var(--pinkGlow), transparent 60%),
+    radial-gradient(500px 350px at 15% 80%, rgba(251,211,230,.35), transparent 60%),
+    linear-gradient(180deg, var(--cream), var(--cream2));
+  color:var(--text);
+}
+
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:32px 18px 64px;
+    }
+
+    /* ===== HERO LAYOUT ===== */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap:24px;
+      align-items:center;
+      background: rgba(255,255,255,.55);
+      border-radius:28px;
+      padding:24px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.15);
+    }
+
+    .hero img{
+      width:100%;
+      max-height:520px;
+      object-fit:cover;
+      border-radius:24px;
+      border:3px solid var(--border);
+    }
+
+    h1{
+  font-family: 'Playfair Display', serif;
+  font-size:46px;              /* slightly larger, elegant */
+  margin:0;
+  letter-spacing:.8px;
+  color: var(--pink1);
+}
+
+
+    .tag{
+      margin:10px 0 16px;
+      font-weight:600;
+      opacity:.85;
+    }
+
+    .hero p{
+      line-height:1.6;
+      font-size:16px;
+      max-width:520px;
+    }
+
+    .btnrow{
+      display:flex;
+      gap:12px;
+      margin-top:18px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:12px 18px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:800;
+    }
+
+    .primary{
+      background: linear-gradient(90deg, var(--pink1), var(--pink2));
+      color:#3a0026;
+    }
+
+    .ghost{
+      border:2px solid var(--pink1);
+      color:#3a0026;
+    }
+
+    /* ===== SECTIONS ===== */
+    section{
+      margin-top:42px;
+    }
+
+    section h2{
+      font-size:22px;
+      margin-bottom:12px;
+    }
+
+    .card{
+      background: var(--card);
+      border-radius:22px;
+      padding:18px;
+      border:1px solid var(--border);
+      box-shadow: 0 14px 28px rgba(0,0,0,.12);
+      max-width:600px;
+    }
+
+    audio{
+      width:100%;
+      margin-top:10px;
+    }
+
+    .small{
+      font-size:14px;
+      opacity:.8;
+    }
+
+    footer{
+      margin-top:60px;
+      font-size:13px;
+      opacity:.7;
+      text-align:center;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 900px){
+      .hero{
+        grid-template-columns: 1fr;
+      }
+      h1{
+        font-size:32px;
+      }
+    }
+/* ===== CONTACT ICON STYLES ===== */
+.card p{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.card a{
+  color: var(--pink1);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.card a:hover{
+  text-decoration:underline;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- HERO -->
+    <div class="hero">
+      <!-- LEFT: BIG HEADSHOT -->
+      <img src="Commercial Headshot.jpg" alt="Commercial Headshot">
+
+      <!-- RIGHT: INFO -->
+      <div>
+        <h1>Shamariah Neil</h1>
+        <div class="tag">Commercial Voice Actor • Bright • Believable • Confident</div>
+
+        <p>
+          I deliver clean, professional commercial voiceovers with fast turnaround —
+          from warm and conversational to upbeat and energetic.
+        </p>
+
+        <div class="btnrow">
+          <a class="btn primary" href="#contact">Book Me</a>
+          <a class="btn ghost" href="#demos">Listen to Demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEMOS -->
+    <section id="demos">
+      <h2>Commercial Demo</h2>
+      <div class="card">
+        <div class="small">Conversational • Trustworthy • Lifestyle brands</div>
+        <audio controls src="ShamariahNeil_CommercialDemo.mp3"></audio>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+
+    <p class="small">
+      📧 <strong>Email:</strong>
+      <a href="mailto:justt.sham@gmail.com">justt.sham@gmail.com</a>
+    </p>
+
+    <p class="small">
+      ▶️ <strong>YouTube:</strong>
+      <a href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer">
+        @justsham08
+      </a>
+    </p>
+
+    <p class="small">
+      💬 <strong>Discord:</strong>
+      <a href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer">
+        @justsham_
+      </a>
+    </p>
+
+  </div>
+</section>
+
+    <footer>
+      © <span id="y"></span> Shamariah Neil • Voice Actor
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
