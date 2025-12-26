@@ -400,15 +400,18 @@
 
     /* Home studio image (smaller so it doesn’t force scrolling) */
     .studioImg{
-  width:100%;
-  max-height:220px;        /* keeps page from scrolling */
-  object-fit:contain;      /* shows the FULL image */
-  background:#fff;         /* clean background if image is tall */
+  display:block;
+  max-width:100%;
+  max-height:220px;      /* keeps page one-screen */
+  height:auto;
+  width:auto;            /* 👈 key: lets image size itself */
+  object-fit:contain;
+  margin:12px auto 0;    /* centers image */
   border-radius:18px;
   border:2px solid var(--borderPink);
-  display:block;
-  margin-top:12px;
+  background:transparent;
 }
+
 
 
     .list{
