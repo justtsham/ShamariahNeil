@@ -337,10 +337,15 @@
       .brand .first, .brand .last{ font-size:40px; }
     }
 
-    /* ✅ Hide the big Home block on ALL tabs except Home */
-    .page:not(#page-home) #home-hero{
-      display:none !important;
-    }
+    /* HARD LOCK: Commercial Voice Actor ONLY on Home */
+#home-hero{
+  display:none;
+}
+
+#page-home.active #home-hero{
+  display:block;
+}
+
   </style>
 </head>
 
