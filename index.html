@@ -1,559 +1,262 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shamariah Neil | Voice Actor</title>
-  <meta name="description" content="Shamariah Neil — Voice Actor" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shamariah Neil | Voice Actor</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --cream:#f9f3ec;
-      --cream2:#fffaf5;
+<style>
+:root{
+  --cream:#f9f3ec;
+  --cream2:#fffaf6;
+  --pink:#f6b7d2;
+  --pink-soft:#fde6f1;
+  --border:#f6b7d2;
+  --text:#2a0820;
+}
 
-      --pink1:#f6a6c9;
-      --pink2:#fbd3e6;
+*{box-sizing:border-box;}
 
-      /* super soft pink that blends with cream */
-      --softPink: rgba(246,166,201,.14);
-      --softPink2: rgba(251,211,230,.16);
+body{
+  margin:0;
+  font-family:system-ui,Segoe UI,Arial;
+  background:linear-gradient(180deg,var(--cream),var(--cream2));
+  color:var(--text);
+  min-height:100vh;
+}
 
-      --text:#2a0820;
-      --card: rgba(255,255,255,.90);
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+}
 
-      /* all box borders pink */
-      --borderPink: rgba(246,166,201,.75);
-      --borderPinkSoft: rgba(246,166,201,.55);
+.logo{
+  font-family:'Allura', cursive;
+  font-size:48px;
+  color:var(--pink);
+}
 
-      --shadow: 0 18px 40px rgba(0,0,0,.10);
-    }
+nav{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
 
-    *{ box-sizing:border-box; }
-    html, body { height:100%; }
+nav a{
+  text-decoration:none;
+  font-weight:600;
+  color:var(--text);
+  cursor:pointer;
+}
 
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      color:var(--text);
-      background:
-        radial-gradient(700px 450px at 80% 10%, var(--softPink), transparent 62%),
-        radial-gradient(600px 420px at 15% 85%, var(--softPink2), transparent 62%),
-        linear-gradient(180deg, var(--cream), var(--cream2));
-    }
+.socials{
+  display:flex;
+  gap:10px;
+}
 
-    a{ color:inherit; }
+.socials a{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:2px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:var(--text);
+  font-size:14px;
+}
 
-    .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:18px;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-    }
+.email-pill{
+  padding:8px 14px;
+  border-radius:20px;
+  background:var(--pink-soft);
+  border:2px solid var(--border);
+  font-weight:600;
+}
 
-    /* ===== TOP NAV ===== */
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding:6px 6px 10px;
-      flex-wrap:wrap;
-    }
+main{
+  padding:30px;
+}
 
-    .brand{
-      text-decoration:none;
-      display:flex;
-      align-items:baseline;
-      gap:10px;
-      white-space:nowrap;
-    }
+.page{
+  display:none;
+}
 
-    .brand .first,
-    .brand .last{
-      font-family:'Allura', cursive;
-      font-size:46px;
-      line-height:1;
-      color:var(--pink1);
-      letter-spacing:.3px;
-    }
+.page.active{
+  display:block;
+}
 
-    nav{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
+/* Layout */
+.layout{
+  display:grid;
+  grid-template-columns:360px 1fr;
+  gap:30px;
+  max-width:1200px;
+  margin:0 auto;
+}
 
-    nav a.tab{
-      text-decoration:none;
-      font-weight:900;
-      font-size:14px;
-      opacity:.92;
-      padding:6px 2px;
-      border-bottom:2px solid transparent;
-    }
+.card{
+  background:white;
+  border-radius:26px;
+  padding:24px;
+  border:2px solid var(--border);
+}
 
-    nav a.tab:hover{
-      border-bottom-color: var(--borderPink);
-    }
+.headshot img{
+  width:100%;
+  border-radius:22px;
+}
 
-    /* Socials AFTER the tabs */
-    .socials{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-left:2px;
-    }
+/* Home hero only */
+#home-hero{}
 
-    .iconbtn{
-      width:34px;
-      height:34px;
-      border-radius:999px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid var(--borderPink);
-      background: rgba(255,255,255,.70);
-      box-shadow: 0 10px 18px rgba(0,0,0,.06);
-      text-decoration:none;
-    }
-    .iconbtn:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 14px 24px rgba(0,0,0,.08);
-    }
-    .iconbtn svg{ width:18px; height:18px; }
+/* Audio */
+audio{
+  width:100%;
+  margin-top:14px;
+}
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      padding:10px 14px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:900;
-      font-size:13px;
-      background: linear-gradient(90deg, var(--pink1), var(--pink2));
-      color:#3a0026;
-      border:1px solid rgba(255,255,255,.7);
-      box-shadow: 0 10px 22px rgba(0,0,0,.08);
-      white-space:nowrap;
-    }
+/* Make Home fill screen */
+#page-home{
+  min-height:calc(100vh - 120px);
+  display:flex;
+  align-items:center;
+}
 
-    /* ===== MAIN PANEL ===== */
-    .panel{
-      position:relative;
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow: var(--shadow);
-      border:2px solid var(--borderPink);
-      background: linear-gradient(180deg, rgba(246,166,201,.18), rgba(255,250,245,.55));
-      flex:1;
-      min-height:0;
-    }
-
-    .panel::after{
-      content:"";
-      position:absolute;
-      left:0; right:0; bottom:-2px;
-      height:110px;
-      background: var(--cream2);
-      clip-path: polygon(
-        0% 35%,
-        10% 45%,
-        25% 55%,
-        40% 50%,
-        55% 62%,
-        70% 50%,
-        85% 58%,
-        100% 45%,
-        100% 100%,
-        0% 100%
-      );
-      opacity:.92;
-    }
-
-    .panelInner{
-      position:relative;
-      z-index:1;
-      padding:18px;
-      display:grid;
-      grid-template-columns: 360px 1fr;
-      gap:18px;
-      align-items:start;
-      height:100%;
-      min-height:0;
-    }
-
-    /* LEFT: headshot container stays the same on EVERY tab */
-    .headshotWrap{
-      background: rgba(255,255,255,.22);
-      border:2px solid var(--borderPink);
-      border-radius:26px;
-      padding:12px;
-      height:fit-content;
-    }
-
-    /* Headshot size locked to the same look on every tab */
-    .headshot{
-      width:100%;
-      max-height:520px;
-      height:auto;
-      object-fit:cover;
-      border-radius:22px;
-      border:2px solid var(--borderPink);
-      display:block;
-      background:#fff;
-    }
-
-    /* RIGHT: content card */
-    .card{
-      background: var(--card);
-      border-radius:22px;
-      padding:16px;
-      border:2px solid var(--borderPink);
-      box-shadow: 0 14px 28px rgba(0,0,0,.10);
-      max-width:760px;
-    }
-
-    .sectionTitle{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:14px;
-      padding:2px 2px 10px;
-    }
-
-    h1{
-      margin:0;
-      font-family:'Playfair Display', serif;
-      font-size:28px;
-      letter-spacing:.4px;
-    }
-
-    .small{
-      font-size:14px;
-      opacity:.88;
-    }
-
-    .demoRow{
-      display:grid;
-      grid-template-columns: 1fr auto;
-      gap:12px;
-      align-items:center;
-      padding:12px;
-      border-radius:16px;
-      border:2px solid var(--borderPinkSoft);
-      background: rgba(255,255,255,.78);
-      margin-top:12px;
-    }
-
-    .demoName{ font-weight:900; }
-    .demoMeta{ font-size:12px; opacity:.75; margin-top:4px; }
-
-    .btn{
-      border-radius:999px;
-      padding:9px 12px;
-      font-weight:900;
-      font-size:12px;
-      text-decoration:none;
-      border:2px solid var(--borderPinkSoft);
-      background:#fff;
-      color:#3a0026;
-      cursor:pointer;
-      display:inline-block;
-    }
-    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 20px rgba(0,0,0,.08); }
-    .btnPrimary{
-      background: linear-gradient(90deg, var(--pink1), var(--pink2));
-      border-color: rgba(255,255,255,.75);
-    }
-
-    audio{
-      width:100%;
-      margin-top:12px;
-      display:block;
-    }
-
-    /* Pages */
-    .page{ display:none; }
-    .page.active{ display:block; }
-
-    /* Home: stretch without scrolling */
-    #page-home{
-      height:100%;
-      min-height:0;
-      display:flex;
-      align-items:stretch;
-    }
-    #page-home .card{
-      width:100%;
-      height:100%;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      gap:12px;
-    }
-
-    /* Home studio image */
-    .studioImg{
-      width:100%;
-      border-radius:18px;
-      border:2px solid var(--borderPink);
-      display:block;
-      margin-top:12px;
-    }
-
-    .list{
-      margin:10px 0 0;
-      padding-left:18px;
-    }
-    .list li{ margin:6px 0; }
-
-    footer{
-      text-align:center;
-      font-size:13px;
-      opacity:.72;
-      padding:4px 0 0;
-    }
-
-    @media (max-width: 980px){
-      .panelInner{ grid-template-columns: 1fr; height:auto; }
-      .headshot{ max-height:420px; }
-      #page-home{ height:auto; }
-      #page-home .card{ height:auto; justify-content:flex-start; }
-    }
-
-    @media (max-width: 640px){
-      nav{ gap:10px; }
-      .pill{ width:100%; justify-content:center; }
-      .brand .first, .brand .last{ font-size:40px; }
-    }
-
-    /* ✅ Hide the big Home block on ALL tabs except Home */
-    .page:not(#page-home) #home-hero{
-      display:none !important;
-    }
-  </style>
+/* Hide home-only section elsewhere */
+#home-hero{display:none;}
+body[data-page="home"] #home-hero{display:block;}
+</style>
 </head>
 
-<body>
-  <div class="wrap">
+<body data-page="home">
 
-    <!-- TOP NAV -->
-    <div class="topbar">
-      <a class="brand" href="#home" data-tab="home" aria-label="Home">
-        <span class="first">Shamariah</span>
-        <span class="last">Neil</span>
-      </a>
+<header>
+  <div class="logo">Shamariah Neil</div>
 
-      <nav aria-label="Primary">
-        <a class="tab" href="#home" data-tab="home">Home</a>
-        <a class="tab" href="#demos" data-tab="demos">Demos</a>
-        <a class="tab" href="#studio" data-tab="studio">Home Studio</a>
-        <a class="tab" href="#about" data-tab="about">About</a>
-        <a class="tab" href="#contact" data-tab="contact">Contact Me</a>
+  <nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('demos')">Demos</a>
+    <a onclick="showPage('studio')">Home Studio</a>
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('contact')">Contact Me</a>
+  </nav>
 
-        <!-- Socials AFTER the tabs -->
-        <span class="socials" aria-label="Social links">
-          <a class="iconbtn" href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.9 4.7 12 4.7 12 4.7s-5.9 0-7.5.4A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.6.4 7.5.4 7.5.4s5.9 0 7.5-.4a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/>
-            </svg>
-          </a>
-
-          <a class="iconbtn" href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer" aria-label="Discord">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M20 4.6A16.4 16.4 0 0 0 15.9 3c-.2.4-.4.9-.6 1.3a15.3 15.3 0 0 0-4.6 0c-.2-.4-.4-.9-.6-1.3A16.4 16.4 0 0 0 4 4.6C2.4 7 1.7 9.4 1.8 11.8c1.9 1.4 3.8 2.2 5.7 2.8.4-.5.7-1 .9-1.6-.7-.3-1.3-.6-1.9-1 .2-.1.3-.3.5-.4 3.6 1.7 7.5 1.7 11.1 0 .2.1.3.3.5.4-.6.4-1.2.7-1.9 1 .3.6.6 1.1.9 1.6 1.9-.6 3.8-1.4 5.7-2.8.1-2.4-.6-4.8-2.2-7.2zM8.7 13.4c-.7 0-1.3-.6-1.3-1.4s.6-1.4 1.3-1.4c.7 0 1.3.6 1.3 1.4s-.6 1.4-1.3 1.4zm6.6 0c-.7 0-1.3-.6-1.3-1.4s.6-1.4 1.3-1.4c.7 0 1.3.6 1.3 1.4s-.6 1.4-1.3 1.4z"/>
-            </svg>
-          </a>
-        </span>
-
-        <a class="pill" href="mailto:shamariahneilvo@gmail.com">shamariahneilvo@gmail.com</a>
-      </nav>
-    </div>
-
-    <!-- PANEL -->
-    <div class="panel">
-      <div class="panelInner">
-
-        <!-- LEFT: HEADSHOT -->
-        <div class="headshotWrap">
-          <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot" />
-        </div>
-
-        <!-- RIGHT: PAGES -->
-        <div style="min-height:0;">
-
-          <!-- HOME (ONLY thing that shows in circled area) -->
-          <section id="page-home" class="page active" aria-label="Home">
-            <div class="card" id="home-hero">
-              <div class="sectionTitle">
-                <h1>Commercial Voice Actor</h1>
-              </div>
-
-              <p class="small" style="margin:0;">
-                <strong>Booking:</strong>
-                <a href="mailto:shamariahneilvo@gmail.com"
-                   style="font-weight:900; text-decoration:none; border-bottom:2px solid var(--borderPink); padding-bottom:2px;">
-                  shamariahneilvo@gmail.com
-                </a>
-              </p>
-
-              <div class="demoRow">
-                <div>
-                  <div class="demoName">Commercial Demo</div>
-                  <div class="demoMeta">Conversational • Trustworthy • Lifestyle</div>
-                </div>
-                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;">
-                  <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Download</a>
-                  <a class="btn btnPrimary" href="#demos" data-tab="demos">More</a>
-                </div>
-              </div>
-
-              <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=2">
-                Your browser does not support the audio element.
-              </audio>
-            </div>
-          </section>
-
-          <!-- DEMOS -->
-          <section id="page-demos" class="page" aria-label="Demos">
-            <div class="card">
-              <div class="sectionTitle">
-                <h1>Demos</h1>
-              </div>
-
-              <div class="small">Commercial Demo</div>
-              <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=2">
-                Your browser does not support the audio element.
-              </audio>
-
-              <p class="small" style="margin-top:10px;">
-                <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Open / Download</a>
-              </p>
-            </div>
-          </section>
-
-          <!-- HOME STUDIO -->
-          <section id="page-studio" class="page" aria-label="Home Studio">
-            <div class="card">
-              <div class="sectionTitle">
-                <h1>Home Studio</h1>
-              </div>
-
-              <p class="small" style="margin:0;">
-                Clean, broadcast-ready audio from my home setup:
-              </p>
-
-              <ul class="small list">
-                <li><strong>Interface:</strong> Focusrite Scarlett 2i2 (4th Gen)</li>
-                <li><strong>Headphones:</strong> Audio-Technica ATH-M20x Professional Studio Monitor Headphones</li>
-                <li><strong>Recording Software:</strong> Audacity</li>
-                <li><strong>Microphone:</strong> RØDE NT1 (5th Gen) — XLR + USB</li>
-              </ul>
-
-              <img class="studioImg" src="home studio.jpeg" alt="Home studio setup" />
-            </div>
-          </section>
-
-          <!-- ABOUT -->
-          <section id="page-about" class="page" aria-label="About">
-            <div class="card">
-              <div class="sectionTitle">
-                <h1>About</h1>
-              </div>
-              <p class="small" style="margin:0;">
-                (Tell me 2–3 lines you want here and I’ll write it for you.)
-              </p>
-            </div>
-          </section>
-
-          <!-- CONTACT -->
-          <section id="page-contact" class="page" aria-label="Contact">
-            <div class="card">
-              <div class="sectionTitle">
-                <h1>Contact Me</h1>
-              </div>
-
-              <p class="small" style="margin:10px 0;">
-                📧 <strong>Email:</strong>
-                <a href="mailto:shamariahneilvo@gmail.com"
-                   style="font-weight:900; text-decoration:none; border-bottom:2px solid var(--borderPink); padding-bottom:2px;">
-                  shamariahneilvo@gmail.com
-                </a>
-              </p>
-
-              <p class="small" style="margin:10px 0;">
-                ▶️ <strong>YouTube:</strong>
-                <a href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer"
-                   style="font-weight:900; text-decoration:none; border-bottom:2px solid var(--borderPink); padding-bottom:2px;">
-                  @justsham08
-                </a>
-              </p>
-
-              <p class="small" style="margin:10px 0;">
-                💬 <strong>Discord:</strong>
-                <a href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer"
-                   style="font-weight:900; text-decoration:none; border-bottom:2px solid var(--borderPink); padding-bottom:2px;">
-                  @justsham_
-                </a>
-              </p>
-            </div>
-          </section>
-
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      © <span id="y"></span> Shamariah Neil • Voice Actor
-    </footer>
+  <div class="socials">
+    <a href="https://youtube.com/@justsham08" target="_blank">▶</a>
+    <a href="https://discord.com/users/justsham_" target="_blank">💬</a>
+    <div class="email-pill">shamariahneilvo@gmail.com</div>
   </div>
+</header>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+<main>
 
-    const map = {
-      home: "page-home",
-      demos: "page-demos",
-      studio: "page-studio",
-      about: "page-about",
-      contact: "page-contact"
-    };
+<!-- HOME -->
+<section id="page-home" class="page active">
+  <div class="layout">
 
-    function showTab(tab){
-      const id = map[tab] || map.home;
-      document.querySelectorAll(".page").forEach(s => s.classList.remove("active"));
-      const el = document.getElementById(id);
-      if (el) el.classList.add("active");
-    }
+    <div class="card headshot">
+      <img src="Commercial Headshot.jpg" alt="Headshot">
+    </div>
 
-    function tabFromHash(){
-      const h = (location.hash || "#home").replace("#","");
-      return map[h] ? h : "home";
-    }
+    <div class="card" id="home-hero">
+      <h2>Commercial Voice Actor</h2>
+      <p><strong>Booking:</strong> shamariahneilvo@gmail.com</p>
 
-    document.addEventListener("click", (e) => {
-      const a = e.target.closest("a[data-tab]");
-      if (!a) return;
-      const tab = a.getAttribute("data-tab");
-      if (!tab) return;
-      e.preventDefault();
-      history.pushState(null, "", `#${tab}`);
-      showTab(tab);
-    });
+      <h3>Commercial Demo</h3>
+      <p>Conversational • Trustworthy • Lifestyle</p>
 
-    window.addEventListener("popstate", () => showTab(tabFromHash()));
-    window.addEventListener("hashchange", () => showTab(tabFromHash()));
-    showTab(tabFromHash());
-  </script>
+      <audio controls preload="metadata">
+        <source src="commercial-demo.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+  </div>
+</section>
+
+<!-- DEMOS -->
+<section id="page-demos" class="page">
+  <div class="layout">
+    <div class="card headshot">
+      <img src="Commercial Headshot.jpg">
+    </div>
+
+    <div class="card">
+      <h2>Commercial Demo</h2>
+      <audio controls preload="metadata">
+        <source src="commercial-demo.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+</section>
+
+<!-- HOME STUDIO -->
+<section id="page-studio" class="page">
+  <div class="layout">
+    <div class="card headshot">
+      <img src="home studio.jpeg">
+    </div>
+
+    <div class="card">
+      <h2>Home Studio</h2>
+      <ul>
+        <li>RØDE NT1 (5th Gen) – XLR & USB</li>
+        <li>Focusrite Scarlett 2i2 (4th Gen)</li>
+        <li>Audio-Technica ATH-M20x Headphones</li>
+        <li>Audacity</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="page-about" class="page">
+  <div class="layout">
+    <div class="card headshot">
+      <img src="Commercial Headshot.jpg">
+    </div>
+
+    <div class="card">
+      <h2>About</h2>
+      <p>
+        I’m a commercial voice actor delivering warm, confident, and believable reads
+        with broadcast-quality audio from my professional home studio.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="page-contact" class="page">
+  <div class="layout">
+    <div class="card headshot">
+      <img src="Commercial Headshot.jpg">
+    </div>
+
+    <div class="card">
+      <h2>Contact Me</h2>
+      <p>Email: shamariahneilvo@gmail.com</p>
+      <p>YouTube: @justsham08</p>
+      <p>Discord: @justsham_</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+function showPage(page){
+  document.body.setAttribute("data-page", page);
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+}
+</script>
+
 </body>
 </html>
