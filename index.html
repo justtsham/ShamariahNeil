@@ -174,15 +174,23 @@
       white-space:nowrap;
     }
 
-    .brand .first,
-    .brand .last{
-      font-family:'Allura', cursive;
-      font-size:46px;
-      line-height:1;
-      color:var(--pink1);
-      letter-spacing:.3px;
-      text-shadow: 0 8px 18px rgba(246,166,201,.25);
-    }
+  .brand .first,
+.brand .last{
+  font-family:'Allura', cursive;
+  font-size:58px;              /* ⬅️ bigger */
+  line-height:1;
+  color:#e05a97;               /* ⬅️ darker pink */
+  letter-spacing:.4px;
+
+  /* soft white outline + glow */
+  text-shadow:
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,
+     0 10px 22px rgba(224,90,151,.45);
+}
+
 
     nav{
       display:flex;
