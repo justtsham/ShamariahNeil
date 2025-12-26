@@ -19,12 +19,14 @@
       --pink1:#f6a6c9;
       --pink2:#fbd3e6;
 
+      /* super soft pink that blends with cream */
       --softPink: rgba(246,166,201,.14);
       --softPink2: rgba(251,211,230,.16);
 
       --text:#2a0820;
       --card: rgba(255,255,255,.90);
 
+      /* all box borders pink */
       --borderPink: rgba(246,166,201,.75);
       --borderPinkSoft: rgba(246,166,201,.55);
 
@@ -49,7 +51,7 @@
     .wrap{
       max-width:1100px;
       margin:0 auto;
-      padding:18px 18px 18px;
+      padding:18px;
       min-height:100vh;
       display:flex;
       flex-direction:column;
@@ -199,7 +201,7 @@
       height:fit-content;
     }
 
-    /* ✅ Headshot size locked to "Demo tab" look */
+    /* Headshot size locked to the same look on every tab */
     .headshot{
       width:100%;
       max-height:520px;
@@ -280,10 +282,11 @@
       display:block;
     }
 
+    /* Pages */
     .page{ display:none; }
     .page.active{ display:block; }
 
-    /* HOME: stretch without scrolling */
+    /* Home: stretch without scrolling */
     #page-home{
       height:100%;
       min-height:0;
@@ -322,9 +325,7 @@
     }
 
     @media (max-width: 980px){
-      .wrap{ padding-bottom:22px; }
       .panelInner{ grid-template-columns: 1fr; height:auto; }
-      .headshotWrap{ height:auto; }
       .headshot{ max-height:420px; }
       #page-home{ height:auto; }
       #page-home .card{ height:auto; justify-content:flex-start; }
@@ -335,10 +336,11 @@
       .pill{ width:100%; justify-content:center; }
       .brand .first, .brand .last{ font-size:40px; }
     }
-    /* Show the big home "Commercial Voice Actor" block ONLY on Home tab */
-.page:not(#page-home) #home-hero{
-  display:none !important;
-}
+
+    /* ✅ Hide the big Home block on ALL tabs except Home */
+    .page:not(#page-home) #home-hero{
+      display:none !important;
+    }
   </style>
 </head>
 
@@ -382,7 +384,7 @@
     <div class="panel">
       <div class="panelInner">
 
-        <!-- LEFT: HEADSHOT (same on every tab) -->
+        <!-- LEFT: HEADSHOT -->
         <div class="headshotWrap">
           <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot" />
         </div>
@@ -390,9 +392,9 @@
         <!-- RIGHT: PAGES -->
         <div style="min-height:0;">
 
-          <!-- HOME (keeps "Commercial Voice Actor" only here) -->
+          <!-- HOME (ONLY thing that shows in circled area) -->
           <section id="page-home" class="page active" aria-label="Home">
-  <div class="card" id="home-hero">
+            <div class="card" id="home-hero">
               <div class="sectionTitle">
                 <h1>Commercial Voice Actor</h1>
               </div>
@@ -422,7 +424,7 @@
             </div>
           </section>
 
-          <!-- DEMOS (no "Commercial Voice Actor" title here) -->
+          <!-- DEMOS -->
           <section id="page-demos" class="page" aria-label="Demos">
             <div class="card">
               <div class="sectionTitle">
@@ -440,7 +442,7 @@
             </div>
           </section>
 
-          <!-- HOME STUDIO (no "Commercial Voice Actor" title here) -->
+          <!-- HOME STUDIO -->
           <section id="page-studio" class="page" aria-label="Home Studio">
             <div class="card">
               <div class="sectionTitle">
@@ -458,23 +460,23 @@
                 <li><strong>Microphone:</strong> RØDE NT1 (5th Gen) — XLR + USB</li>
               </ul>
 
-              <img class="studioImg" src="home studio.jpeg" alt="Home studio setup (RØDE + Focusrite + booth)" />
+              <img class="studioImg" src="home studio.jpeg" alt="Home studio setup" />
             </div>
           </section>
 
-          <!-- ABOUT (no "Commercial Voice Actor" title here) -->
+          <!-- ABOUT -->
           <section id="page-about" class="page" aria-label="About">
             <div class="card">
               <div class="sectionTitle">
                 <h1>About</h1>
               </div>
               <p class="small" style="margin:0;">
-                (Tell me 2–3 lines you want here—fun, professional, or both—and I’ll write this section for you.)
+                (Tell me 2–3 lines you want here and I’ll write it for you.)
               </p>
             </div>
           </section>
 
-          <!-- CONTACT (no "Commercial Voice Actor" title here) -->
+          <!-- CONTACT -->
           <section id="page-contact" class="page" aria-label="Contact">
             <div class="card">
               <div class="sectionTitle">
@@ -555,4 +557,3 @@
   </script>
 </body>
 </html>
-
