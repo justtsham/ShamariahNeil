@@ -501,6 +501,35 @@
   </style>
 </head>
 
+/* Home page background mic (decorative) */
+#page-home{
+  position: relative;
+}
+
+#page-home::after{
+  content:"";
+  position:absolute;
+  top:-40px;
+  right:-40px;
+  width:420px;
+  height:420px;
+
+  background-image: url("rode mic.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+
+  opacity: 0.12;               /* subtle + professional */
+  pointer-events: none;        /* prevents blocking clicks */
+  z-index: 0;
+}
+
+/* Ensure home card stays ABOVE the background mic */
+#page-home .card{
+  position: relative;
+  z-index: 2;
+}
+
 <body>
   <!-- Background flair -->
   <div class="blobs" aria-hidden="true">
