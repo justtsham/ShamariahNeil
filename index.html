@@ -6,7 +6,7 @@
   <title>Shamariah Neil | Voice Actor</title>
   <meta name="description" content="Shamariah Neil — Commercial Voice Actor" />
 
-  <!-- Google Font -->
+  <!-- Font (free + classy) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -17,10 +17,11 @@
       --cream2:#fffaf5;
       --pink1:#f6a6c9;
       --pink2:#fbd3e6;
-      --pinkGlow: rgba(246,166,201,.35);
+      --lav:#bba6d6;               /* soft lavender accent (still in your vibe) */
       --text:#2a0820;
-      --card: rgba(255,255,255,.9);
+      --card: rgba(255,255,255,.88);
       --border: rgba(246,166,201,.45);
+      --shadow: 0 18px 40px rgba(0,0,0,.10);
     }
 
     *{ box-sizing:border-box; }
@@ -28,98 +29,229 @@
     body{
       margin:0;
       font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:
-        radial-gradient(600px 400px at 85% 15%, var(--pinkGlow), transparent 60%),
-        radial-gradient(500px 350px at 15% 80%, rgba(251,211,230,.35), transparent 60%),
-        linear-gradient(180deg, var(--cream), var(--cream2));
       color:var(--text);
+      background:
+        radial-gradient(700px 450px at 80% 10%, rgba(246,166,201,.20), transparent 60%),
+        radial-gradient(600px 420px at 15% 85%, rgba(187,166,214,.18), transparent 60%),
+        linear-gradient(180deg, var(--cream), var(--cream2));
     }
+
+    a{ color:inherit; }
 
     .wrap{
       max-width:1100px;
       margin:0 auto;
-      padding:32px 18px 64px;
+      padding:22px 18px 70px;
     }
 
-    /* ===== HERO ===== */
-    .hero{
-      display:grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap:24px;
+    /* ===== TOP NAV (like the example) ===== */
+    .topbar{
+      display:flex;
       align-items:center;
-      background: rgba(255,255,255,.6);
-      border-radius:28px;
-      padding:24px;
-      box-shadow: 0 30px 60px rgba(0,0,0,.15);
+      justify-content:space-between;
+      gap:18px;
+      padding:10px 6px 18px;
     }
 
-    .hero img{
-      width:100%;
-      max-height:520px;
-      object-fit:cover;
-      border-radius:24px;
-      border:3px solid var(--border);
-    }
-
-    h1{
+    .brand{
       font-family:'Playfair Display', serif;
-      font-size:46px;
-      margin:0;
-      letter-spacing:.8px;
+      font-weight:700;
+      letter-spacing:.5px;
+      font-size:22px;
+      color:#1f0a16;
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      white-space:nowrap;
+    }
+
+    .brand .sig{
       color:var(--pink1);
     }
 
-    .tag{
-      margin:10px 0 16px;
-      font-weight:600;
-      opacity:.85;
-    }
-
-    .hero p{
-      line-height:1.6;
-      font-size:16px;
-      max-width:520px;
-    }
-
-    .btnrow{
+    nav{
       display:flex;
-      gap:12px;
-      margin-top:18px;
+      align-items:center;
+      gap:18px;
       flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    nav a{
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      opacity:.9;
+      padding:6px 2px;
+      border-bottom:2px solid transparent;
+    }
+
+    nav a:hover{
+      border-bottom-color: rgba(246,166,201,.75);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:900;
+      font-size:13px;
+      background: linear-gradient(90deg, var(--pink1), var(--pink2));
+      color:#3a0026;
+      border:1px solid rgba(255,255,255,.6);
+      box-shadow: 0 10px 22px rgba(0,0,0,.08);
+      white-space:nowrap;
+    }
+
+    /* ===== MAIN PANEL (mimic example layout) ===== */
+    .panel{
+      position:relative;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border:1px solid rgba(246,166,201,.25);
+      background:
+        linear-gradient(180deg, rgba(187,166,214,.38), rgba(187,166,214,.24));
+    }
+
+    /* Wavy bottom like the example */
+    .panel::after{
+      content:"";
+      position:absolute;
+      left:0; right:0; bottom:-2px;
+      height:110px;
+      background: var(--cream2);
+      clip-path: polygon(
+        0% 35%,
+        10% 45%,
+        25% 55%,
+        40% 50%,
+        55% 62%,
+        70% 50%,
+        85% 58%,
+        100% 45%,
+        100% 100%,
+        0% 100%
+      );
+      opacity:.9;
+    }
+
+    .panelInner{
+      position:relative;
+      z-index:1;
+      padding:26px;
+      display:grid;
+      grid-template-columns: 340px 1fr 320px;
+      gap:22px;
+      align-items:start;
+    }
+
+    /* ===== LEFT: HEADSHOT CARD ===== */
+    .headshotWrap{
+      background: rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.35);
+      border-radius:26px;
+      padding:12px;
+    }
+
+    .headshot{
+      width:100%;
+      aspect-ratio: 1 / 1;
+      object-fit:cover;
+      border-radius:22px;
+      border:3px solid rgba(246,166,201,.45);
+      display:block;
+      background:#fff;
+    }
+
+    /* ===== CENTER: DEMOS LIST ===== */
+    .centerTitle{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      padding:4px 2px 10px;
+    }
+
+    h1{
+      margin:0;
+      font-family:'Playfair Display', serif;
+      font-size:32px;
+      letter-spacing:.6px;
+      color:rgba(42,8,32,.95);
+    }
+
+    .subtitle{
+      margin:6px 0 0;
+      font-weight:700;
+      opacity:.78;
+      font-size:14px;
+    }
+
+    .demoCard{
+      background: var(--card);
+      border:1px solid rgba(255,255,255,.65);
+      border-radius:22px;
+      padding:14px;
+      box-shadow: 0 14px 28px rgba(0,0,0,.10);
+    }
+
+    .demoRow{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:12px;
+      align-items:center;
+      padding:12px;
+      border-radius:16px;
+      border:1px solid rgba(246,166,201,.30);
+      background: rgba(255,255,255,.70);
+    }
+
+    .demoRow + .demoRow{ margin-top:10px; }
+
+    .demoName{
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+
+    .demoMeta{
+      font-size:12px;
+      opacity:.75;
+      margin-top:4px;
+    }
+
+    .demoActions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
     .btn{
-      padding:12px 18px;
-      border-radius:14px;
+      border-radius:999px;
+      padding:9px 12px;
+      font-weight:900;
+      font-size:12px;
       text-decoration:none;
-      font-weight:800;
+      border:1px solid rgba(246,166,201,.50);
+      background:#fff;
+      color:#3a0026;
       cursor:pointer;
-      display:inline-block;
     }
 
-    .primary{
+    .btn:hover{
+      box-shadow: 0 10px 20px rgba(0,0,0,.08);
+      transform: translateY(-1px);
+    }
+
+    .btnPrimary{
       background: linear-gradient(90deg, var(--pink1), var(--pink2));
-      color:#3a0026;
-      border:none;
-    }
-
-    .ghost{
-      border:2px solid var(--pink1);
-      background:transparent;
-      color:#3a0026;
-    }
-
-    /* ===== SECTIONS ===== */
-    section{ margin-top:42px; }
-    section h2{ font-size:22px; margin-bottom:12px; }
-
-    .card{
-      background:var(--card);
-      border-radius:22px;
-      padding:18px;
-      border:1px solid var(--border);
-      box-shadow:0 14px 28px rgba(0,0,0,.12);
-      max-width:650px;
+      border-color: rgba(255,255,255,.7);
     }
 
     audio{
@@ -128,50 +260,75 @@
       display:block;
     }
 
-    .small{
-      font-size:14px;
-      opacity:.85;
+    /* ===== RIGHT: CONTACT BLOCK (like example) ===== */
+    .rightBox{
+      background: rgba(255,255,255,.22);
+      border:1px solid rgba(255,255,255,.35);
+      border-radius:26px;
+      padding:14px;
     }
 
+    .contactCard{
+      background: var(--card);
+      border-radius:22px;
+      padding:14px;
+      border:1px solid rgba(255,255,255,.65);
+      box-shadow: 0 14px 28px rgba(0,0,0,.10);
+    }
+
+    .contactCard h2{
+      margin:0;
+      font-family:'Playfair Display', serif;
+      font-size:18px;
+      letter-spacing:.4px;
+    }
+
+    .contactLine{
+      margin:10px 0 0;
+      font-weight:800;
+      font-size:13px;
+      line-height:1.35;
+    }
+
+    .contactLine a{
+      color:#3a0026;
+      text-decoration:none;
+      border-bottom:2px solid rgba(246,166,201,.55);
+      padding-bottom:2px;
+    }
+
+    .contactLine a:hover{
+      border-bottom-color: rgba(246,166,201,1);
+    }
+
+    .tiny{
+      margin-top:10px;
+      font-size:12px;
+      opacity:.75;
+      font-weight:700;
+    }
+
+    /* ===== FOOTER ===== */
     footer{
-      margin-top:60px;
+      text-align:center;
+      margin-top:18px;
       font-size:13px;
       opacity:.7;
-      text-align:center;
     }
 
-    /* ===== CONTACT ICON STYLES (scoped safely) ===== */
-    #contact .card p{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      margin:10px 0;
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 980px){
+      .panelInner{
+        grid-template-columns: 1fr;
+      }
+      .headshotWrap{ max-width:420px; }
+      .rightBox{ max-width:520px; }
     }
 
-    #contact .card a{
-      color:var(--pink1);
-      font-weight:700;
-      text-decoration:none;
-    }
-
-    #contact .card a:hover{
-      text-decoration:underline;
-    }
-
-    /* ===== DEMO LINK STYLE ===== */
-    .demo-link a{
-      color:var(--pink1);
-      font-weight:800;
-      text-decoration:none;
-    }
-    .demo-link a:hover{
-      text-decoration:underline;
-    }
-
-    /* ===== MOBILE ===== */
-    @media (max-width:900px){
-      .hero{ grid-template-columns:1fr; }
-      h1{ font-size:34px; }
+    @media (max-width: 640px){
+      nav{ gap:10px; }
+      .pill{ width:100%; justify-content:center; }
+      h1{ font-size:28px; }
     }
   </style>
 </head>
@@ -179,71 +336,104 @@
 <body>
   <div class="wrap">
 
-    <!-- HERO -->
-    <div class="hero">
-      <img src="Commercial Headshot.jpg" alt="Commercial Headshot">
+    <!-- TOP NAV -->
+    <div class="topbar">
+      <a class="brand" href="#top">
+        <span class="sig">Shamariah</span> Neil
+      </a>
 
-      <div>
-        <h1>Shamariah Neil</h1>
-        <div class="tag">Commercial Voice Actor • Bright • Believable • Confident</div>
-
-        <p>
-          I deliver clean, professional commercial voiceovers with fast turnaround —
-          from warm and conversational to upbeat and energetic.
-        </p>
-
-        <div class="btnrow">
-          <a class="btn primary" href="#contact">Book Me</a>
-          <a class="btn ghost" href="#demos">Listen to Demo</a>
-        </div>
-      </div>
+      <nav aria-label="Primary">
+        <a href="#demos">Demos</a>
+        <a href="#contact">Contact</a>
+        <a class="pill" href="mailto:justt.sham@gmail.com">justt.sham@gmail.com</a>
+      </nav>
     </div>
 
-    <!-- DEMOS -->
-    <section id="demos">
-      <h2>Commercial Demo</h2>
+    <!-- MAIN PANEL -->
+    <div id="top" class="panel">
+      <div class="panelInner">
 
-      <div class="card">
-        <div class="small">Conversational • Trustworthy • Lifestyle brands</div>
+        <!-- LEFT: HEADSHOT -->
+        <div class="headshotWrap">
+          <!-- Put your image in the repo root with this exact filename -->
+          <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot" />
+        </div>
 
-        <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=12">
-          Your browser does not support the audio element.
-        </audio>
+        <!-- CENTER: DEMOS -->
+        <div>
+          <div class="centerTitle">
+            <div>
+              <h1 id="demos">DEMOS</h1>
+              <div class="subtitle">Commercial • Bright • Believable • Confident</div>
+            </div>
+          </div>
 
-        <p class="small demo-link" style="margin-top:10px;">
-          <a href="/commercial-demo.mp3" target="_blank" rel="noopener">
-            Open / Download Demo
-          </a>
-        </p>
+          <div class="demoCard">
+            <!-- Demo 1 -->
+            <div class="demoRow">
+              <div>
+                <div class="demoName">Commercial Demo</div>
+                <div class="demoMeta">Conversational • Trustworthy • Lifestyle</div>
+              </div>
+              <div class="demoActions">
+                <!-- Audio element below handles play -->
+                <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Download</a>
+                <a class="btn btnPrimary" href="#player">Play</a>
+              </div>
+            </div>
+
+            <!-- You can add more demos later by copying demoRow blocks -->
+            <!-- Example:
+            <div class="demoRow">
+              <div>
+                <div class="demoName">Animation Demo</div>
+                <div class="demoMeta">Characters • Accents • Energy</div>
+              </div>
+              <div class="demoActions">
+                <a class="btn" href="/animation-demo.mp3" target="_blank" rel="noopener">Download</a>
+                <a class="btn btnPrimary" href="#player2">Play</a>
+              </div>
+            </div>
+            -->
+
+            <!-- Player (uses your file name) -->
+            <div id="player"></div>
+            <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=1">
+              Your browser does not support the audio element.
+            </audio>
+
+            <div class="tiny">
+              Tip: If the player ever acts weird on mobile, tap “Download” to open the demo in a new tab.
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: CONTACT -->
+        <div class="rightBox" id="contact">
+          <div class="contactCard">
+            <h2>Contact</h2>
+
+            <div class="contactLine">
+              Email:
+              <a href="mailto:justt.sham@gmail.com">justt.sham@gmail.com</a>
+            </div>
+
+            <div class="contactLine">
+              YouTube:
+              <a href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer">@justsham08</a>
+            </div>
+
+            <div class="contactLine">
+              Discord:
+              <a href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer">@justsham_</a>
+            </div>
+
+            <div class="tiny">Fast turnaround • Clean audio • Ready to book</div>
+          </div>
+        </div>
+
       </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card">
-
-        <p class="small">
-          📧 <strong>Email:</strong>
-          <a href="mailto:justt.sham@gmail.com">justt.sham@gmail.com</a>
-        </p>
-
-        <p class="small">
-          ▶️ <strong>YouTube:</strong>
-          <a href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer">
-            @justsham08
-          </a>
-        </p>
-
-        <p class="small">
-          💬 <strong>Discord:</strong>
-          <a href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer">
-            @justsham_
-          </a>
-        </p>
-
-      </div>
-    </section>
+    </div>
 
     <footer>
       © <span id="y"></span> Shamariah Neil • Voice Actor
@@ -255,4 +445,3 @@
   </script>
 </body>
 </html>
-
