@@ -337,10 +337,12 @@
       .brand .first, .brand .last{ font-size:40px; }
     }
 
-    /* HARD LOCK: Commercial Voice Actor ONLY on Home */
-#home-hero{
-  display:none;
-}
+  /* Hide the Commercial Voice Actor block everywhere */
+#home-hero { display: none !important; }
+
+/* Show it ONLY when Home tab is active */
+#page-home.active #home-hero { display: block !important; }
+
 
 #page-home.active #home-hero{
   display:block;
