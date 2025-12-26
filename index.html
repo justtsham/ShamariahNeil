@@ -15,24 +15,39 @@
     :root{
       --cream:#f9f3ec;
       --cream2:#fffaf5;
+
+      /* Your pinks */
       --pink1:#f6a6c9;
       --pink2:#fbd3e6;
-      --lav:#bba6d6;
+
+      /* NEW: ultra-soft pink that almost blends with cream */
+      --softPink: rgba(246,166,201,.14);
+      --softPink2: rgba(251,211,230,.16);
+
       --text:#2a0820;
-      --card: rgba(255,255,255,.88);
-      --border: rgba(246,166,201,.45);
+
+      /* Cards */
+      --card: rgba(255,255,255,.90);
+
+      /* NEW: make ALL box borders pink */
+      --borderPink: rgba(246,166,201,.75);
+      --borderPinkSoft: rgba(246,166,201,.55);
+
       --shadow: 0 18px 40px rgba(0,0,0,.10);
     }
 
     *{ box-sizing:border-box; }
+
+    /* Make layout able to fill the screen without scrolling on Home */
+    html, body { height:100%; }
 
     body{
       margin:0;
       font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--text);
       background:
-        radial-gradient(700px 450px at 80% 10%, rgba(246,166,201,.20), transparent 60%),
-        radial-gradient(600px 420px at 15% 85%, rgba(187,166,214,.18), transparent 60%),
+        radial-gradient(700px 450px at 80% 10%, var(--softPink), transparent 62%),
+        radial-gradient(600px 420px at 15% 85%, var(--softPink2), transparent 62%),
         linear-gradient(180deg, var(--cream), var(--cream2));
     }
 
@@ -41,7 +56,11 @@
     .wrap{
       max-width:1100px;
       margin:0 auto;
-      padding:22px 18px 70px;
+      padding:18px 18px 18px;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
     }
 
     /* ===== TOP NAV ===== */
@@ -49,8 +68,8 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:18px;
-      padding:10px 6px 18px;
+      gap:14px;
+      padding:6px 6px 10px;
       flex-wrap:wrap;
     }
 
@@ -62,7 +81,8 @@
       white-space:nowrap;
     }
 
-    .brand .sig{
+    .brand .first,
+    .brand .last{
       font-family:'Allura', cursive;
       font-size:46px;
       line-height:1;
@@ -70,42 +90,33 @@
       letter-spacing:.3px;
     }
 
-    .brand .last{
-      font-family:'Playfair Display', serif;
-      font-weight:700;
-      letter-spacing:.5px;
-      font-size:20px;
-      color:#1f0a16;
-      opacity:.9;
-    }
-
     nav{
       display:flex;
       align-items:center;
-      gap:18px;
+      gap:16px;
       flex-wrap:wrap;
       justify-content:flex-end;
     }
 
-    nav a{
+    nav a.tab{
       text-decoration:none;
-      font-weight:800;
+      font-weight:900;
       font-size:14px;
-      opacity:.9;
+      opacity:.92;
       padding:6px 2px;
       border-bottom:2px solid transparent;
     }
 
-    nav a:hover{
-      border-bottom-color: rgba(246,166,201,.75);
+    nav a.tab:hover{
+      border-bottom-color: var(--borderPink);
     }
 
-    /* Socials (after tabs) */
+    /* Socials AFTER the tabs */
     .socials{
       display:flex;
       align-items:center;
       gap:10px;
-      margin-left:6px;
+      margin-left:2px;
     }
 
     .iconbtn{
@@ -115,8 +126,8 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      border:1px solid rgba(246,166,201,.55);
-      background: rgba(255,255,255,.65);
+      border:1px solid var(--borderPink);
+      background: rgba(255,255,255,.70);
       box-shadow: 0 10px 18px rgba(0,0,0,.06);
       text-decoration:none;
     }
@@ -129,7 +140,6 @@
     .pill{
       display:inline-flex;
       align-items:center;
-      gap:10px;
       padding:10px 14px;
       border-radius:999px;
       text-decoration:none;
@@ -137,7 +147,7 @@
       font-size:13px;
       background: linear-gradient(90deg, var(--pink1), var(--pink2));
       color:#3a0026;
-      border:1px solid rgba(255,255,255,.6);
+      border:1px solid rgba(255,255,255,.7);
       box-shadow: 0 10px 22px rgba(0,0,0,.08);
       white-space:nowrap;
     }
@@ -148,8 +158,11 @@
       border-radius:28px;
       overflow:hidden;
       box-shadow: var(--shadow);
-      border:1px solid rgba(246,166,201,.25);
-      background: linear-gradient(180deg, rgba(187,166,214,.38), rgba(187,166,214,.24));
+      border:2px solid var(--borderPink);
+      /* NEW: soft pink background instead of lavender */
+      background: linear-gradient(180deg, rgba(246,166,201,.18), rgba(255,250,245,.55));
+      flex:1; /* lets Home fill the remaining height */
+      min-height:0; /* important for flex children */
     }
 
     /* Wavy bottom */
@@ -171,33 +184,38 @@
         100% 100%,
         0% 100%
       );
-      opacity:.9;
+      opacity:.92;
     }
 
     .panelInner{
       position:relative;
       z-index:1;
-      padding:26px;
+      padding:18px;
       display:grid;
       grid-template-columns: 360px 1fr;
-      gap:22px;
+      gap:18px;
       align-items:start;
+      height:100%;
+      min-height:0;
     }
 
     /* Left: headshot */
     .headshotWrap{
-      background: rgba(255,255,255,.18);
-      border:1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.22);
+      border:2px solid var(--borderPink);
       border-radius:26px;
       padding:12px;
+      height:100%;
+      min-height:0;
     }
 
     .headshot{
       width:100%;
-      aspect-ratio: 1 / 1;
+      height:100%;
+      max-height:520px;
       object-fit:cover;
       border-radius:22px;
-      border:3px solid rgba(246,166,201,.45);
+      border:2px solid var(--borderPink);
       display:block;
       background:#fff;
     }
@@ -206,10 +224,10 @@
     .card{
       background: var(--card);
       border-radius:22px;
-      padding:18px;
-      border:1px solid rgba(255,255,255,.65);
+      padding:16px;
+      border:2px solid var(--borderPink);
       box-shadow: 0 14px 28px rgba(0,0,0,.10);
-      max-width:720px;
+      max-width:760px;
     }
 
     .sectionTitle{
@@ -217,19 +235,19 @@
       align-items:flex-end;
       justify-content:space-between;
       gap:14px;
-      padding:4px 2px 10px;
+      padding:2px 2px 10px;
     }
 
     h1{
       margin:0;
       font-family:'Playfair Display', serif;
-      font-size:30px;
-      letter-spacing:.6px;
+      font-size:28px;
+      letter-spacing:.4px;
     }
 
     .small{
       font-size:14px;
-      opacity:.85;
+      opacity:.88;
     }
 
     .demoRow{
@@ -239,8 +257,8 @@
       align-items:center;
       padding:12px;
       border-radius:16px;
-      border:1px solid rgba(246,166,201,.30);
-      background: rgba(255,255,255,.70);
+      border:2px solid var(--borderPinkSoft);
+      background: rgba(255,255,255,.78);
       margin-top:12px;
     }
 
@@ -253,7 +271,7 @@
       font-weight:900;
       font-size:12px;
       text-decoration:none;
-      border:1px solid rgba(246,166,201,.50);
+      border:2px solid var(--borderPinkSoft);
       background:#fff;
       color:#3a0026;
       cursor:pointer;
@@ -262,7 +280,7 @@
     .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 20px rgba(0,0,0,.08); }
     .btnPrimary{
       background: linear-gradient(90deg, var(--pink1), var(--pink2));
-      border-color: rgba(255,255,255,.7);
+      border-color: rgba(255,255,255,.75);
     }
 
     audio{
@@ -271,27 +289,62 @@
       display:block;
     }
 
-    footer{
-      text-align:center;
-      margin-top:18px;
-      font-size:13px;
-      opacity:.7;
-    }
-
     /* ===== PAGES (tabs sections) ===== */
     .page{ display:none; }
     .page.active{ display:block; }
 
+    /* Home: stretch without scrolling */
+    #page-home{
+      height:100%;
+      min-height:0;
+      display:flex;
+      align-items:stretch;
+    }
+    #page-home .card{
+      width:100%;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center; /* centers content vertically */
+      gap:12px;
+    }
+
+    /* Home studio image */
+    .studioImg{
+      width:100%;
+      border-radius:18px;
+      border:2px solid var(--borderPink);
+      display:block;
+      margin-top:12px;
+    }
+
+    .list{
+      margin:10px 0 0;
+      padding-left:18px;
+    }
+    .list li{ margin:6px 0; }
+
+    footer{
+      text-align:center;
+      font-size:13px;
+      opacity:.72;
+      padding:4px 0 0;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 980px){
-      .panelInner{ grid-template-columns: 1fr; }
-      .headshotWrap{ max-width:420px; }
+      .wrap{ padding-bottom:22px; }
+      .panelInner{ grid-template-columns: 1fr; height:auto; }
+      .headshotWrap{ height:auto; }
+      .headshot{ max-height:420px; }
+      #page-home{ height:auto; }
+      #page-home .card{ height:auto; justify-content:flex-start; }
     }
 
     @media (max-width: 640px){
       nav{ gap:10px; }
       .pill{ width:100%; justify-content:center; }
-      .brand .sig{ font-size:40px; }
+      .brand .first, .brand .last{ font-size:40px; }
     }
   </style>
 </head>
@@ -302,16 +355,16 @@
     <!-- TOP NAV -->
     <div class="topbar">
       <a class="brand" href="#home" data-tab="home" aria-label="Home">
-        <span class="sig">Shamariah</span>
+        <span class="first">Shamariah</span>
         <span class="last">Neil</span>
       </a>
 
       <nav aria-label="Primary">
-        <a href="#home" data-tab="home">Home</a>
-        <a href="#demos" data-tab="demos">Demos</a>
-        <a href="#studio" data-tab="studio">Home Studio</a>
-        <a href="#about" data-tab="about">About</a>
-        <a href="#contact" data-tab="contact">Contact Me</a>
+        <a class="tab" href="#home" data-tab="home">Home</a>
+        <a class="tab" href="#demos" data-tab="demos">Demos</a>
+        <a class="tab" href="#studio" data-tab="studio">Home Studio</a>
+        <a class="tab" href="#about" data-tab="about">About</a>
+        <a class="tab" href="#contact" data-tab="contact">Contact Me</a>
 
         <!-- Socials AFTER the tabs -->
         <span class="socials" aria-label="Social links">
@@ -330,7 +383,7 @@
           </a>
         </span>
 
-        <!-- Email pill -->
+        <!-- Updated contact email -->
         <a class="pill" href="mailto:shamariahneilvo@gmail.com">shamariahneilvo@gmail.com</a>
       </nav>
     </div>
@@ -339,24 +392,26 @@
     <div class="panel">
       <div class="panelInner">
 
-        <!-- LEFT: HEADSHOT (shows on home like you want) -->
+        <!-- LEFT: HEADSHOT -->
         <div class="headshotWrap">
+          <!-- Keep this exact filename in your repo root -->
           <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot" />
         </div>
 
         <!-- RIGHT: PAGES -->
-        <div>
+        <div style="min-height:0;">
 
-          <!-- HOME (only headshot + email + demos) -->
+          <!-- HOME (ONLY headshot + email + demos, and includes demo audio on Home) -->
           <section id="page-home" class="page active" aria-label="Home">
             <div class="card">
               <div class="sectionTitle">
-                <h1>Welcome</h1>
+                <h1>Commercial Voice Actor</h1>
               </div>
 
-              <p class="small" style="margin:0 0 12px;">
+              <p class="small" style="margin:0;">
                 <strong>Booking:</strong>
-                <a href="mailto:shamariahneilvo@gmail.com" style="font-weight:900; text-decoration:none; border-bottom:2px solid rgba(246,166,201,.7);">
+                <a href="mailto:shamariahneilvo@gmail.com"
+                   style="font-weight:900; text-decoration:none; border-bottom:2px solid var(--borderPink); padding-bottom:2px;">
                   shamariahneilvo@gmail.com
                 </a>
               </p>
@@ -368,9 +423,14 @@
                 </div>
                 <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;">
                   <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Download</a>
-                  <a class="btn btnPrimary" href="#demos" data-tab="demos">View</a>
+                  <a class="btn btnPrimary" href="#demos" data-tab="demos">More</a>
                 </div>
               </div>
+
+              <!-- Demo player ON HOME (as requested) -->
+              <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=2">
+                Your browser does not support the audio element.
+              </audio>
             </div>
           </section>
 
@@ -382,7 +442,7 @@
               </div>
 
               <div class="small">Commercial Demo</div>
-              <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=1">
+              <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=2">
                 Your browser does not support the audio element.
               </audio>
 
@@ -392,16 +452,26 @@
             </div>
           </section>
 
-          <!-- HOME STUDIO -->
+          <!-- HOME STUDIO (with your equipment + your photo) -->
           <section id="page-studio" class="page" aria-label="Home Studio">
             <div class="card">
               <div class="sectionTitle">
                 <h1>Home Studio</h1>
               </div>
+
               <p class="small" style="margin:0;">
-                Add your studio details here (mic, interface, DAW, booth, turnaround time). If you tell me your setup,
-                I’ll format this section nicely.
+                Clean, broadcast-ready audio from my home setup:
               </p>
+
+              <ul class="small list">
+                <li><strong>Interface:</strong> Focusrite Scarlett 2i2 (4th Gen)</li>
+                <li><strong>Headphones:</strong> Audio-Technica ATH-M20x Professional Studio Monitor Headphones</li>
+                <li><strong>Recording Software:</strong> Audacity</li>
+                <li><strong>Microphone:</strong> RØDE NT1 (5th Gen) — XLR + USB</li>
+              </ul>
+
+              <!-- Upload your booth photo to GitHub with this EXACT filename -->
+              <img class="studioImg" src="home studio.jpeg" alt="Home studio setup (RØDE + Focusrite + booth)" />
             </div>
           </section>
 
@@ -412,7 +482,7 @@
                 <h1>About</h1>
               </div>
               <p class="small" style="margin:0;">
-                Add a short bio here. If you tell me your style (funny, warm, professional), I’ll write it for you.
+                (Tell me 2–3 lines you want here—fun, professional, or both—and I’ll write this section for you.)
               </p>
             </div>
           </section>
@@ -426,7 +496,8 @@
 
               <p class="small" style="margin:10px 0;">
                 📧 <strong>Email:</strong>
-                <a href="mailto:shamariahneilvo@gmail.com" style="font-weight:900; text-decoration:none; border-bottom:2px solid rgba(246,166,201,.7);">
+                <a href="mailto:shamariahneilvo@gmail.com"
+                   style="font-weight:900; text-decoration:none; border-bottom:2px solid var(--borderPink); padding-bottom:2px;">
                   shamariahneilvo@gmail.com
                 </a>
               </p>
@@ -434,7 +505,7 @@
               <p class="small" style="margin:10px 0;">
                 ▶️ <strong>YouTube:</strong>
                 <a href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer"
-                   style="font-weight:900; text-decoration:none; border-bottom:2px solid rgba(246,166,201,.7);">
+                   style="font-weight:900; text-decoration:none; border-bottom:2px solid var(--borderPink); padding-bottom:2px;">
                   @justsham08
                 </a>
               </p>
@@ -442,7 +513,7 @@
               <p class="small" style="margin:10px 0;">
                 💬 <strong>Discord:</strong>
                 <a href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer"
-                   style="font-weight:900; text-decoration:none; border-bottom:2px solid rgba(246,166,201,.7);">
+                   style="font-weight:900; text-decoration:none; border-bottom:2px solid var(--borderPink); padding-bottom:2px;">
                   @justsham_
                 </a>
               </p>
@@ -480,12 +551,10 @@
 
     function tabFromHash(){
       const h = (location.hash || "#home").replace("#","");
-      // allow hashes like #demos, #studio, etc.
       if (map[h]) return h;
       return "home";
     }
 
-    // click handling
     document.addEventListener("click", (e) => {
       const a = e.target.closest("a[data-tab]");
       if (!a) return;
@@ -496,7 +565,6 @@
       showTab(tab);
     });
 
-    // back/forward + direct load
     window.addEventListener("popstate", () => showTab(tabFromHash()));
     window.addEventListener("hashchange", () => showTab(tabFromHash()));
     showTab(tabFromHash());
