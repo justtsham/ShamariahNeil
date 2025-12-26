@@ -16,20 +16,15 @@
       --cream:#f9f3ec;
       --cream2:#fffaf5;
 
-      /* Your pinks */
       --pink1:#f6a6c9;
       --pink2:#fbd3e6;
 
-      /* NEW: ultra-soft pink that almost blends with cream */
       --softPink: rgba(246,166,201,.14);
       --softPink2: rgba(251,211,230,.16);
 
       --text:#2a0820;
-
-      /* Cards */
       --card: rgba(255,255,255,.90);
 
-      /* NEW: make ALL box borders pink */
       --borderPink: rgba(246,166,201,.75);
       --borderPinkSoft: rgba(246,166,201,.55);
 
@@ -37,8 +32,6 @@
     }
 
     *{ box-sizing:border-box; }
-
-    /* Make layout able to fill the screen without scrolling on Home */
     html, body { height:100%; }
 
     body{
@@ -159,13 +152,11 @@
       overflow:hidden;
       box-shadow: var(--shadow);
       border:2px solid var(--borderPink);
-      /* NEW: soft pink background instead of lavender */
       background: linear-gradient(180deg, rgba(246,166,201,.18), rgba(255,250,245,.55));
-      flex:1; /* lets Home fill the remaining height */
-      min-height:0; /* important for flex children */
+      flex:1;
+      min-height:0;
     }
 
-    /* Wavy bottom */
     .panel::after{
       content:"";
       position:absolute;
@@ -199,20 +190,20 @@
       min-height:0;
     }
 
-    /* Left: headshot */
+    /* LEFT: headshot container stays the same on EVERY tab */
     .headshotWrap{
       background: rgba(255,255,255,.22);
       border:2px solid var(--borderPink);
       border-radius:26px;
       padding:12px;
-      height:100%;
-      min-height:0;
+      height:fit-content;
     }
 
+    /* ✅ Headshot size locked to "Demo tab" look */
     .headshot{
       width:100%;
-      height:100%;
       max-height:520px;
+      height:auto;
       object-fit:cover;
       border-radius:22px;
       border:2px solid var(--borderPink);
@@ -220,7 +211,7 @@
       background:#fff;
     }
 
-    /* Right: content card */
+    /* RIGHT: content card */
     .card{
       background: var(--card);
       border-radius:22px;
@@ -289,11 +280,10 @@
       display:block;
     }
 
-    /* ===== PAGES (tabs sections) ===== */
     .page{ display:none; }
     .page.active{ display:block; }
 
-    /* Home: stretch without scrolling */
+    /* HOME: stretch without scrolling */
     #page-home{
       height:100%;
       min-height:0;
@@ -305,7 +295,7 @@
       height:100%;
       display:flex;
       flex-direction:column;
-      justify-content:center; /* centers content vertically */
+      justify-content:center;
       gap:12px;
     }
 
@@ -331,7 +321,6 @@
       padding:4px 0 0;
     }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 980px){
       .wrap{ padding-bottom:22px; }
       .panelInner{ grid-template-columns: 1fr; height:auto; }
@@ -368,14 +357,12 @@
 
         <!-- Socials AFTER the tabs -->
         <span class="socials" aria-label="Social links">
-          <!-- YouTube -->
           <a class="iconbtn" href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.9 4.7 12 4.7 12 4.7s-5.9 0-7.5.4A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.6.4 7.5.4 7.5.4s5.9 0 7.5-.4a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/>
             </svg>
           </a>
 
-          <!-- Discord -->
           <a class="iconbtn" href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer" aria-label="Discord">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M20 4.6A16.4 16.4 0 0 0 15.9 3c-.2.4-.4.9-.6 1.3a15.3 15.3 0 0 0-4.6 0c-.2-.4-.4-.9-.6-1.3A16.4 16.4 0 0 0 4 4.6C2.4 7 1.7 9.4 1.8 11.8c1.9 1.4 3.8 2.2 5.7 2.8.4-.5.7-1 .9-1.6-.7-.3-1.3-.6-1.9-1 .2-.1.3-.3.5-.4 3.6 1.7 7.5 1.7 11.1 0 .2.1.3.3.5.4-.6.4-1.2.7-1.9 1 .3.6.6 1.1.9 1.6 1.9-.6 3.8-1.4 5.7-2.8.1-2.4-.6-4.8-2.2-7.2zM8.7 13.4c-.7 0-1.3-.6-1.3-1.4s.6-1.4 1.3-1.4c.7 0 1.3.6 1.3 1.4s-.6 1.4-1.3 1.4zm6.6 0c-.7 0-1.3-.6-1.3-1.4s.6-1.4 1.3-1.4c.7 0 1.3.6 1.3 1.4s-.6 1.4-1.3 1.4z"/>
@@ -383,7 +370,6 @@
           </a>
         </span>
 
-        <!-- Updated contact email -->
         <a class="pill" href="mailto:shamariahneilvo@gmail.com">shamariahneilvo@gmail.com</a>
       </nav>
     </div>
@@ -392,16 +378,15 @@
     <div class="panel">
       <div class="panelInner">
 
-        <!-- LEFT: HEADSHOT -->
+        <!-- LEFT: HEADSHOT (same on every tab) -->
         <div class="headshotWrap">
-          <!-- Keep this exact filename in your repo root -->
           <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot" />
         </div>
 
         <!-- RIGHT: PAGES -->
         <div style="min-height:0;">
 
-          <!-- HOME (ONLY headshot + email + demos, and includes demo audio on Home) -->
+          <!-- HOME (keeps "Commercial Voice Actor" only here) -->
           <section id="page-home" class="page active" aria-label="Home">
             <div class="card">
               <div class="sectionTitle">
@@ -427,14 +412,13 @@
                 </div>
               </div>
 
-              <!-- Demo player ON HOME (as requested) -->
               <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=2">
                 Your browser does not support the audio element.
               </audio>
             </div>
           </section>
 
-          <!-- DEMOS -->
+          <!-- DEMOS (no "Commercial Voice Actor" title here) -->
           <section id="page-demos" class="page" aria-label="Demos">
             <div class="card">
               <div class="sectionTitle">
@@ -452,7 +436,7 @@
             </div>
           </section>
 
-          <!-- HOME STUDIO (with your equipment + your photo) -->
+          <!-- HOME STUDIO (no "Commercial Voice Actor" title here) -->
           <section id="page-studio" class="page" aria-label="Home Studio">
             <div class="card">
               <div class="sectionTitle">
@@ -470,12 +454,11 @@
                 <li><strong>Microphone:</strong> RØDE NT1 (5th Gen) — XLR + USB</li>
               </ul>
 
-              <!-- Upload your booth photo to GitHub with this EXACT filename -->
               <img class="studioImg" src="home studio.jpeg" alt="Home studio setup (RØDE + Focusrite + booth)" />
             </div>
           </section>
 
-          <!-- ABOUT -->
+          <!-- ABOUT (no "Commercial Voice Actor" title here) -->
           <section id="page-about" class="page" aria-label="About">
             <div class="card">
               <div class="sectionTitle">
@@ -487,7 +470,7 @@
             </div>
           </section>
 
-          <!-- CONTACT -->
+          <!-- CONTACT (no "Commercial Voice Actor" title here) -->
           <section id="page-contact" class="page" aria-label="Contact">
             <div class="card">
               <div class="sectionTitle">
@@ -530,10 +513,8 @@
   </div>
 
   <script>
-    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Tab switching (no page reload)
     const map = {
       home: "page-home",
       demos: "page-demos",
@@ -551,8 +532,7 @@
 
     function tabFromHash(){
       const h = (location.hash || "#home").replace("#","");
-      if (map[h]) return h;
-      return "home";
+      return map[h] ? h : "home";
     }
 
     document.addEventListener("click", (e) => {
