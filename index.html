@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shamariah Neil | Voice Actor</title>
-  <meta name="description" content="Shamariah Neil — Commercial Voice Actor" />
+  <meta name="description" content="Shamariah Neil — Voice Actor" />
 
-  <!-- Font (free + classy) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -17,7 +17,7 @@
       --cream2:#fffaf5;
       --pink1:#f6a6c9;
       --pink2:#fbd3e6;
-      --lav:#bba6d6;               /* soft lavender accent (still in your vibe) */
+      --lav:#bba6d6;
       --text:#2a0820;
       --card: rgba(255,255,255,.88);
       --border: rgba(246,166,201,.45);
@@ -44,30 +44,39 @@
       padding:22px 18px 70px;
     }
 
-    /* ===== TOP NAV (like the example) ===== */
+    /* ===== TOP NAV ===== */
     .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:18px;
       padding:10px 6px 18px;
+      flex-wrap:wrap;
     }
 
     .brand{
-      font-family:'Playfair Display', serif;
-      font-weight:700;
-      letter-spacing:.5px;
-      font-size:22px;
-      color:#1f0a16;
       text-decoration:none;
       display:flex;
-      align-items:center;
+      align-items:baseline;
       gap:10px;
       white-space:nowrap;
     }
 
     .brand .sig{
+      font-family:'Allura', cursive;
+      font-size:46px;
+      line-height:1;
       color:var(--pink1);
+      letter-spacing:.3px;
+    }
+
+    .brand .last{
+      font-family:'Playfair Display', serif;
+      font-weight:700;
+      letter-spacing:.5px;
+      font-size:20px;
+      color:#1f0a16;
+      opacity:.9;
     }
 
     nav{
@@ -80,7 +89,7 @@
 
     nav a{
       text-decoration:none;
-      font-weight:700;
+      font-weight:800;
       font-size:14px;
       opacity:.9;
       padding:6px 2px;
@@ -90,6 +99,32 @@
     nav a:hover{
       border-bottom-color: rgba(246,166,201,.75);
     }
+
+    /* Socials (after tabs) */
+    .socials{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-left:6px;
+    }
+
+    .iconbtn{
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(246,166,201,.55);
+      background: rgba(255,255,255,.65);
+      box-shadow: 0 10px 18px rgba(0,0,0,.06);
+      text-decoration:none;
+    }
+    .iconbtn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 24px rgba(0,0,0,.08);
+    }
+    .iconbtn svg{ width:18px; height:18px; }
 
     .pill{
       display:inline-flex;
@@ -107,18 +142,17 @@
       white-space:nowrap;
     }
 
-    /* ===== MAIN PANEL (mimic example layout) ===== */
+    /* ===== MAIN PANEL ===== */
     .panel{
       position:relative;
       border-radius:28px;
       overflow:hidden;
       box-shadow: var(--shadow);
       border:1px solid rgba(246,166,201,.25);
-      background:
-        linear-gradient(180deg, rgba(187,166,214,.38), rgba(187,166,214,.24));
+      background: linear-gradient(180deg, rgba(187,166,214,.38), rgba(187,166,214,.24));
     }
 
-    /* Wavy bottom like the example */
+    /* Wavy bottom */
     .panel::after{
       content:"";
       position:absolute;
@@ -145,12 +179,12 @@
       z-index:1;
       padding:26px;
       display:grid;
-      grid-template-columns: 340px 1fr 320px;
+      grid-template-columns: 360px 1fr;
       gap:22px;
       align-items:start;
     }
 
-    /* ===== LEFT: HEADSHOT CARD ===== */
+    /* Left: headshot */
     .headshotWrap{
       background: rgba(255,255,255,.18);
       border:1px solid rgba(255,255,255,.35);
@@ -168,8 +202,17 @@
       background:#fff;
     }
 
-    /* ===== CENTER: DEMOS LIST ===== */
-    .centerTitle{
+    /* Right: content card */
+    .card{
+      background: var(--card);
+      border-radius:22px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,.65);
+      box-shadow: 0 14px 28px rgba(0,0,0,.10);
+      max-width:720px;
+    }
+
+    .sectionTitle{
       display:flex;
       align-items:flex-end;
       justify-content:space-between;
@@ -180,24 +223,13 @@
     h1{
       margin:0;
       font-family:'Playfair Display', serif;
-      font-size:32px;
+      font-size:30px;
       letter-spacing:.6px;
-      color:rgba(42,8,32,.95);
     }
 
-    .subtitle{
-      margin:6px 0 0;
-      font-weight:700;
-      opacity:.78;
+    .small{
       font-size:14px;
-    }
-
-    .demoCard{
-      background: var(--card);
-      border:1px solid rgba(255,255,255,.65);
-      border-radius:22px;
-      padding:14px;
-      box-shadow: 0 14px 28px rgba(0,0,0,.10);
+      opacity:.85;
     }
 
     .demoRow{
@@ -209,28 +241,11 @@
       border-radius:16px;
       border:1px solid rgba(246,166,201,.30);
       background: rgba(255,255,255,.70);
+      margin-top:12px;
     }
 
-    .demoRow + .demoRow{ margin-top:10px; }
-
-    .demoName{
-      font-weight:900;
-      letter-spacing:.2px;
-    }
-
-    .demoMeta{
-      font-size:12px;
-      opacity:.75;
-      margin-top:4px;
-    }
-
-    .demoActions{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
+    .demoName{ font-weight:900; }
+    .demoMeta{ font-size:12px; opacity:.75; margin-top:4px; }
 
     .btn{
       border-radius:999px;
@@ -242,13 +257,9 @@
       background:#fff;
       color:#3a0026;
       cursor:pointer;
+      display:inline-block;
     }
-
-    .btn:hover{
-      box-shadow: 0 10px 20px rgba(0,0,0,.08);
-      transform: translateY(-1px);
-    }
-
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 20px rgba(0,0,0,.08); }
     .btnPrimary{
       background: linear-gradient(90deg, var(--pink1), var(--pink2));
       border-color: rgba(255,255,255,.7);
@@ -260,55 +271,6 @@
       display:block;
     }
 
-    /* ===== RIGHT: CONTACT BLOCK (like example) ===== */
-    .rightBox{
-      background: rgba(255,255,255,.22);
-      border:1px solid rgba(255,255,255,.35);
-      border-radius:26px;
-      padding:14px;
-    }
-
-    .contactCard{
-      background: var(--card);
-      border-radius:22px;
-      padding:14px;
-      border:1px solid rgba(255,255,255,.65);
-      box-shadow: 0 14px 28px rgba(0,0,0,.10);
-    }
-
-    .contactCard h2{
-      margin:0;
-      font-family:'Playfair Display', serif;
-      font-size:18px;
-      letter-spacing:.4px;
-    }
-
-    .contactLine{
-      margin:10px 0 0;
-      font-weight:800;
-      font-size:13px;
-      line-height:1.35;
-    }
-
-    .contactLine a{
-      color:#3a0026;
-      text-decoration:none;
-      border-bottom:2px solid rgba(246,166,201,.55);
-      padding-bottom:2px;
-    }
-
-    .contactLine a:hover{
-      border-bottom-color: rgba(246,166,201,1);
-    }
-
-    .tiny{
-      margin-top:10px;
-      font-size:12px;
-      opacity:.75;
-      font-weight:700;
-    }
-
-    /* ===== FOOTER ===== */
     footer{
       text-align:center;
       margin-top:18px;
@@ -316,19 +278,20 @@
       opacity:.7;
     }
 
+    /* ===== PAGES (tabs sections) ===== */
+    .page{ display:none; }
+    .page.active{ display:block; }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 980px){
-      .panelInner{
-        grid-template-columns: 1fr;
-      }
+      .panelInner{ grid-template-columns: 1fr; }
       .headshotWrap{ max-width:420px; }
-      .rightBox{ max-width:520px; }
     }
 
     @media (max-width: 640px){
       nav{ gap:10px; }
       .pill{ width:100%; justify-content:center; }
-      h1{ font-size:28px; }
+      .brand .sig{ font-size:40px; }
     }
   </style>
 </head>
@@ -338,100 +301,155 @@
 
     <!-- TOP NAV -->
     <div class="topbar">
-      <a class="brand" href="#top">
-        <span class="sig">Shamariah</span> Neil
+      <a class="brand" href="#home" data-tab="home" aria-label="Home">
+        <span class="sig">Shamariah</span>
+        <span class="last">Neil</span>
       </a>
 
       <nav aria-label="Primary">
-        <a href="#demos">Demos</a>
-        <a href="#contact">Contact</a>
-        <a class="pill" href="mailto:justt.sham@gmail.com">justt.sham@gmail.com</a>
+        <a href="#home" data-tab="home">Home</a>
+        <a href="#demos" data-tab="demos">Demos</a>
+        <a href="#studio" data-tab="studio">Home Studio</a>
+        <a href="#about" data-tab="about">About</a>
+        <a href="#contact" data-tab="contact">Contact Me</a>
+
+        <!-- Socials AFTER the tabs -->
+        <span class="socials" aria-label="Social links">
+          <!-- YouTube -->
+          <a class="iconbtn" href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.9 4.7 12 4.7 12 4.7s-5.9 0-7.5.4A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.6.4 7.5.4 7.5.4s5.9 0 7.5-.4a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/>
+            </svg>
+          </a>
+
+          <!-- Discord -->
+          <a class="iconbtn" href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20 4.6A16.4 16.4 0 0 0 15.9 3c-.2.4-.4.9-.6 1.3a15.3 15.3 0 0 0-4.6 0c-.2-.4-.4-.9-.6-1.3A16.4 16.4 0 0 0 4 4.6C2.4 7 1.7 9.4 1.8 11.8c1.9 1.4 3.8 2.2 5.7 2.8.4-.5.7-1 .9-1.6-.7-.3-1.3-.6-1.9-1 .2-.1.3-.3.5-.4 3.6 1.7 7.5 1.7 11.1 0 .2.1.3.3.5.4-.6.4-1.2.7-1.9 1 .3.6.6 1.1.9 1.6 1.9-.6 3.8-1.4 5.7-2.8.1-2.4-.6-4.8-2.2-7.2zM8.7 13.4c-.7 0-1.3-.6-1.3-1.4s.6-1.4 1.3-1.4c.7 0 1.3.6 1.3 1.4s-.6 1.4-1.3 1.4zm6.6 0c-.7 0-1.3-.6-1.3-1.4s.6-1.4 1.3-1.4c.7 0 1.3.6 1.3 1.4s-.6 1.4-1.3 1.4z"/>
+            </svg>
+          </a>
+        </span>
+
+        <!-- Email pill -->
+        <a class="pill" href="mailto:shamariahneilvo@gmail.com">shamariahneilvo@gmail.com</a>
       </nav>
     </div>
 
-    <!-- MAIN PANEL -->
-    <div id="top" class="panel">
+    <!-- PANEL -->
+    <div class="panel">
       <div class="panelInner">
 
-        <!-- LEFT: HEADSHOT -->
+        <!-- LEFT: HEADSHOT (shows on home like you want) -->
         <div class="headshotWrap">
-          <!-- Put your image in the repo root with this exact filename -->
           <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot" />
         </div>
 
-        <!-- CENTER: DEMOS -->
+        <!-- RIGHT: PAGES -->
         <div>
-          <div class="centerTitle">
-            <div>
-              <h1 id="demos">DEMOS</h1>
-              <div class="subtitle">Commercial • Bright • Believable • Confident</div>
-            </div>
-          </div>
 
-          <div class="demoCard">
-            <!-- Demo 1 -->
-            <div class="demoRow">
-              <div>
-                <div class="demoName">Commercial Demo</div>
-                <div class="demoMeta">Conversational • Trustworthy • Lifestyle</div>
+          <!-- HOME (only headshot + email + demos) -->
+          <section id="page-home" class="page active" aria-label="Home">
+            <div class="card">
+              <div class="sectionTitle">
+                <h1>Welcome</h1>
               </div>
-              <div class="demoActions">
-                <!-- Audio element below handles play -->
-                <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Download</a>
-                <a class="btn btnPrimary" href="#player">Play</a>
-              </div>
-            </div>
 
-            <!-- You can add more demos later by copying demoRow blocks -->
-            <!-- Example:
-            <div class="demoRow">
-              <div>
-                <div class="demoName">Animation Demo</div>
-                <div class="demoMeta">Characters • Accents • Energy</div>
-              </div>
-              <div class="demoActions">
-                <a class="btn" href="/animation-demo.mp3" target="_blank" rel="noopener">Download</a>
-                <a class="btn btnPrimary" href="#player2">Play</a>
+              <p class="small" style="margin:0 0 12px;">
+                <strong>Booking:</strong>
+                <a href="mailto:shamariahneilvo@gmail.com" style="font-weight:900; text-decoration:none; border-bottom:2px solid rgba(246,166,201,.7);">
+                  shamariahneilvo@gmail.com
+                </a>
+              </p>
+
+              <div class="demoRow">
+                <div>
+                  <div class="demoName">Commercial Demo</div>
+                  <div class="demoMeta">Conversational • Trustworthy • Lifestyle</div>
+                </div>
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;">
+                  <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Download</a>
+                  <a class="btn btnPrimary" href="#demos" data-tab="demos">View</a>
+                </div>
               </div>
             </div>
-            -->
+          </section>
 
-            <!-- Player (uses your file name) -->
-            <div id="player"></div>
-            <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=1">
-              Your browser does not support the audio element.
-            </audio>
+          <!-- DEMOS -->
+          <section id="page-demos" class="page" aria-label="Demos">
+            <div class="card">
+              <div class="sectionTitle">
+                <h1>Demos</h1>
+              </div>
 
-            <div class="tiny">
-              Tip: If the player ever acts weird on mobile, tap “Download” to open the demo in a new tab.
+              <div class="small">Commercial Demo</div>
+              <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=1">
+                Your browser does not support the audio element.
+              </audio>
+
+              <p class="small" style="margin-top:10px;">
+                <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Open / Download</a>
+              </p>
             </div>
-          </div>
+          </section>
+
+          <!-- HOME STUDIO -->
+          <section id="page-studio" class="page" aria-label="Home Studio">
+            <div class="card">
+              <div class="sectionTitle">
+                <h1>Home Studio</h1>
+              </div>
+              <p class="small" style="margin:0;">
+                Add your studio details here (mic, interface, DAW, booth, turnaround time). If you tell me your setup,
+                I’ll format this section nicely.
+              </p>
+            </div>
+          </section>
+
+          <!-- ABOUT -->
+          <section id="page-about" class="page" aria-label="About">
+            <div class="card">
+              <div class="sectionTitle">
+                <h1>About</h1>
+              </div>
+              <p class="small" style="margin:0;">
+                Add a short bio here. If you tell me your style (funny, warm, professional), I’ll write it for you.
+              </p>
+            </div>
+          </section>
+
+          <!-- CONTACT -->
+          <section id="page-contact" class="page" aria-label="Contact">
+            <div class="card">
+              <div class="sectionTitle">
+                <h1>Contact Me</h1>
+              </div>
+
+              <p class="small" style="margin:10px 0;">
+                📧 <strong>Email:</strong>
+                <a href="mailto:shamariahneilvo@gmail.com" style="font-weight:900; text-decoration:none; border-bottom:2px solid rgba(246,166,201,.7);">
+                  shamariahneilvo@gmail.com
+                </a>
+              </p>
+
+              <p class="small" style="margin:10px 0;">
+                ▶️ <strong>YouTube:</strong>
+                <a href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer"
+                   style="font-weight:900; text-decoration:none; border-bottom:2px solid rgba(246,166,201,.7);">
+                  @justsham08
+                </a>
+              </p>
+
+              <p class="small" style="margin:10px 0;">
+                💬 <strong>Discord:</strong>
+                <a href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer"
+                   style="font-weight:900; text-decoration:none; border-bottom:2px solid rgba(246,166,201,.7);">
+                  @justsham_
+                </a>
+              </p>
+            </div>
+          </section>
+
         </div>
-
-        <!-- RIGHT: CONTACT -->
-        <div class="rightBox" id="contact">
-          <div class="contactCard">
-            <h2>Contact</h2>
-
-            <div class="contactLine">
-              Email:
-              <a href="mailto:justt.sham@gmail.com">justt.sham@gmail.com</a>
-            </div>
-
-            <div class="contactLine">
-              YouTube:
-              <a href="https://www.youtube.com/@justsham08" target="_blank" rel="noopener noreferrer">@justsham08</a>
-            </div>
-
-            <div class="contactLine">
-              Discord:
-              <a href="https://discord.com/users/justsham_" target="_blank" rel="noopener noreferrer">@justsham_</a>
-            </div>
-
-            <div class="tiny">Fast turnaround • Clean audio • Ready to book</div>
-          </div>
-        </div>
-
       </div>
     </div>
 
@@ -441,7 +459,47 @@
   </div>
 
   <script>
+    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Tab switching (no page reload)
+    const map = {
+      home: "page-home",
+      demos: "page-demos",
+      studio: "page-studio",
+      about: "page-about",
+      contact: "page-contact"
+    };
+
+    function showTab(tab){
+      const id = map[tab] || map.home;
+      document.querySelectorAll(".page").forEach(s => s.classList.remove("active"));
+      const el = document.getElementById(id);
+      if (el) el.classList.add("active");
+    }
+
+    function tabFromHash(){
+      const h = (location.hash || "#home").replace("#","");
+      // allow hashes like #demos, #studio, etc.
+      if (map[h]) return h;
+      return "home";
+    }
+
+    // click handling
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a[data-tab]");
+      if (!a) return;
+      const tab = a.getAttribute("data-tab");
+      if (!tab) return;
+      e.preventDefault();
+      history.pushState(null, "", `#${tab}`);
+      showTab(tab);
+    });
+
+    // back/forward + direct load
+    window.addEventListener("popstate", () => showTab(tabFromHash()));
+    window.addEventListener("hashchange", () => showTab(tabFromHash()));
+    showTab(tabFromHash());
   </script>
 </body>
 </html>
