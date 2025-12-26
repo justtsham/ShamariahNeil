@@ -39,7 +39,7 @@
     *{ box-sizing:border-box; }
     html, body { height:100%; }
 
-    /* ✅ BOLDER BACKGROUND (colors unchanged) */
+    /* ✅ Bold + premium mesh background (same palette) */
     body{
       margin:0;
       font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
@@ -47,43 +47,70 @@
       overflow-x:hidden;
       position:relative;
 
-      /* Bold layered glow + diagonal wash + base cream gradient */
       background:
-        radial-gradient(1200px 820px at 12% 10%, rgba(246,166,201,.38), transparent 62%),
-        radial-gradient(1100px 780px at 88% 16%, rgba(251,211,230,.36), transparent 64%),
-        radial-gradient(950px 720px at 36% 92%, rgba(246,166,201,.28), transparent 64%),
-        radial-gradient(900px 700px at 92% 86%, rgba(246,166,201,.18), transparent 66%),
-        linear-gradient(135deg, rgba(246,166,201,.18), transparent 55%),
+        radial-gradient(1100px 820px at 12% 12%, rgba(246,166,201,.34), transparent 60%),
+        radial-gradient(1000px 760px at 88% 18%, rgba(251,211,230,.32), transparent 62%),
+        radial-gradient(900px 740px at 22% 92%, rgba(246,166,201,.22), transparent 64%),
+        radial-gradient(820px 700px at 92% 88%, rgba(246,166,201,.14), transparent 66%),
+        linear-gradient(135deg, rgba(246,166,201,.10), transparent 52%),
         linear-gradient(180deg, var(--cream), var(--cream2));
       background-attachment: fixed;
     }
 
-    /* Bold “mic/headset-ish” abstract overlay (still just background) */
+    /* ✅ subtle “pearl texture” + sheen */
     body::before{
       content:"";
       position:fixed;
-      inset:-10%;
-      z-index:-2;
+      inset:-12%;
+      z-index:-3;
       pointer-events:none;
-      opacity:.32;
+      opacity:.22;
 
-      /* soft rings + a few line sweeps (keeps your pink/cream palette) */
       background:
-        radial-gradient(circle at 20% 35%, rgba(255,255,255,.65) 0 2px, transparent 3px),
-        radial-gradient(circle at 20% 35%, rgba(246,166,201,.45) 0 130px, transparent 131px),
-        radial-gradient(circle at 22% 37%, rgba(246,166,201,.25) 0 190px, transparent 191px),
+        radial-gradient(circle at 12% 18%, rgba(255,255,255,.55) 0 1.2px, transparent 2px),
+        radial-gradient(circle at 38% 62%, rgba(255,255,255,.45) 0 1.1px, transparent 2px),
+        radial-gradient(circle at 72% 28%, rgba(255,255,255,.50) 0 1.1px, transparent 2px),
+        radial-gradient(circle at 88% 72%, rgba(255,255,255,.40) 0 1px, transparent 2px),
 
-        radial-gradient(circle at 78% 30%, rgba(255,255,255,.55) 0 2px, transparent 3px),
-        radial-gradient(circle at 78% 30%, rgba(251,211,230,.40) 0 150px, transparent 151px),
-        radial-gradient(circle at 80% 32%, rgba(246,166,201,.20) 0 220px, transparent 221px),
+        radial-gradient(circle at 18% 34%, rgba(246,166,201,.22) 0 160px, transparent 161px),
+        radial-gradient(circle at 82% 30%, rgba(251,211,230,.20) 0 190px, transparent 191px),
 
-        linear-gradient(110deg, transparent 0 43%, rgba(255,255,255,.24) 44% 45%, transparent 46% 100%),
-        linear-gradient(110deg, transparent 0 60%, rgba(246,166,201,.18) 61% 62%, transparent 63% 100%),
-        linear-gradient(110deg, transparent 0 72%, rgba(251,211,230,.14) 73% 74%, transparent 75% 100%);
+        linear-gradient(115deg, transparent 0 48%, rgba(255,255,255,.18) 49% 50%, transparent 51% 100%),
+        linear-gradient(115deg, transparent 0 68%, rgba(246,166,201,.12) 69% 70%, transparent 71% 100%);
+
+      background-size:
+        280px 280px,
+        320px 320px,
+        360px 360px,
+        420px 420px,
+        auto,
+        auto,
+        auto,
+        auto;
+
       filter: blur(0.2px);
     }
 
-    /* ✅ Bolder animated glow blobs */
+    /* ✅ Watermark: faint mic + headset silhouette (no files needed) */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      pointer-events:none;
+
+      /* SVG is cream/pink-ish and very low opacity */
+      opacity:.08;                 /* adjust: .06 (fainter) to .12 (stronger) */
+      mix-blend-mode:multiply;
+      background-repeat:no-repeat;
+      background-position: 82% 56%;
+      background-size: min(760px, 70vw);
+
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' viewBox='0 0 1200 900'%3E%3Cg fill='none' stroke='%23e05a97' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Headset band --%3E%3Cpath d='M260 420 C260 250 380 140 540 140 C700 140 820 250 820 420'/%3E%3C!-- Left earcup --%3E%3Cpath d='M250 430 C230 430 220 455 220 485 L220 560 C220 600 245 630 285 630 L330 630 C360 630 380 605 380 575 L380 485 C380 455 350 430 320 430 Z'/%3E%3C!-- Right earcup --%3E%3Cpath d='M830 430 C850 430 860 455 860 485 L860 560 C860 600 835 630 795 630 L750 630 C720 630 700 605 700 575 L700 485 C700 455 730 430 760 430 Z'/%3E%3C!-- Mic stand + body (Rode-ish silhouette) --%3E%3Cpath d='M560 300 L560 720'/%3E%3Cpath d='M510 360 C510 320 540 290 580 290 C620 290 650 320 650 360 L650 520 C650 560 620 590 580 590 C540 590 510 560 510 520 Z'/%3E%3Cpath d='M530 610 L630 610'/%3E%3Cpath d='M520 720 L680 720'/%3E%3C!-- Cable swoosh --%3E%3Cpath d='M650 520 C740 560 820 580 900 610'/%3E%3C/g%3E%3C/svg%3E");
+      filter: blur(0.2px);
+    }
+
+    /* ✅ soft animated glow blobs (kept classy) */
     .blobs{
       position:fixed;
       inset:0;
@@ -96,50 +123,48 @@
       width:560px;
       height:560px;
       border-radius:50%;
-      filter: blur(44px);
-      opacity:.55;
-      background: radial-gradient(circle at 30% 30%, rgba(246,166,201,.85), rgba(246,166,201,.06));
-      animation: floaty 14s ease-in-out infinite;
+      filter: blur(48px);
+      opacity:.46;
+      background: radial-gradient(circle at 30% 30%, rgba(246,166,201,.78), rgba(246,166,201,.05));
+      animation: floaty 16s ease-in-out infinite;
       mix-blend-mode:multiply;
     }
     .blob.b2{
-      width:720px; height:720px;
-      background: radial-gradient(circle at 30% 30%, rgba(251,211,230,.90), rgba(251,211,230,.06));
-      animation-duration: 18s;
-      opacity:.48;
+      width:740px; height:740px;
+      background: radial-gradient(circle at 30% 30%, rgba(251,211,230,.84), rgba(251,211,230,.05));
+      animation-duration: 20s;
+      opacity:.40;
     }
     .blob.b3{
       width:460px; height:460px;
-      background: radial-gradient(circle at 30% 30%, rgba(246,166,201,.75), rgba(246,166,201,.05));
-      animation-duration: 16s;
-      opacity:.42;
+      background: radial-gradient(circle at 30% 30%, rgba(246,166,201,.66), rgba(246,166,201,.04));
+      animation-duration: 18s;
+      opacity:.34;
     }
     @keyframes floaty{
-      0%{ transform: translate(-20px, -10px) scale(1); }
-      50%{ transform: translate(44px, 34px) scale(1.08); }
-      100%{ transform: translate(-20px, -10px) scale(1); }
+      0%{ transform: translate(-18px, -10px) scale(1); }
+      50%{ transform: translate(42px, 30px) scale(1.06); }
+      100%{ transform: translate(-18px, -10px) scale(1); }
     }
 
-    /* ✅ More visible sparkles (still subtle, not glittery) */
+    /* ✅ subtle premium twinkle */
     .sparkles{
       position:fixed;
       inset:0;
       z-index:0;
       pointer-events:none;
-      opacity:.32;
+      opacity:.20;
       background-image:
-        radial-gradient(circle at 10% 20%, rgba(246,166,201,.42) 0 1px, transparent 2px),
-        radial-gradient(circle at 20% 40%, rgba(251,211,230,.40) 0 1px, transparent 2px),
-        radial-gradient(circle at 30% 70%, rgba(246,166,201,.38) 0 1px, transparent 2px),
-        radial-gradient(circle at 60% 30%, rgba(246,166,201,.40) 0 1px, transparent 2px),
-        radial-gradient(circle at 85% 60%, rgba(251,211,230,.36) 0 1px, transparent 2px),
-        radial-gradient(circle at 75% 80%, rgba(246,166,201,.34) 0 1px, transparent 2px);
-      background-size: 220px 220px;
+        radial-gradient(circle at 10% 20%, rgba(246,166,201,.30) 0 1px, transparent 2px),
+        radial-gradient(circle at 30% 70%, rgba(251,211,230,.28) 0 1px, transparent 2px),
+        radial-gradient(circle at 60% 30%, rgba(246,166,201,.26) 0 1px, transparent 2px),
+        radial-gradient(circle at 85% 60%, rgba(251,211,230,.24) 0 1px, transparent 2px);
+      background-size: 260px 260px;
       animation: twinkle 10s ease-in-out infinite;
     }
     @keyframes twinkle{
-      0%,100%{ opacity:.24; }
-      50%{ opacity:.36; }
+      0%,100%{ opacity:.16; }
+      50%{ opacity:.24; }
     }
 
     a{ color:inherit; }
@@ -153,7 +178,7 @@
       flex-direction:column;
       gap:14px;
       position:relative;
-      z-index:1; /* keep content above sparkles */
+      z-index:1; /* keep content above background layers */
     }
 
     /* ===== TOP NAV ===== */
@@ -174,23 +199,21 @@
       white-space:nowrap;
     }
 
-  .brand .first,
-.brand .last{
-  font-family:'Allura', cursive;
-  font-size:58px;              /* ⬅️ bigger */
-  line-height:1;
-  color:#e05a97;               /* ⬅️ darker pink */
-  letter-spacing:.4px;
-
-  /* soft white outline + glow */
-  text-shadow:
-    -1px -1px 0 #ffffff,
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff,
-     0 10px 22px rgba(224,90,151,.45);
-}
-
+    /* name larger + darker + white outline */
+    .brand .first,
+    .brand .last{
+      font-family:'Allura', cursive;
+      font-size:58px;
+      line-height:1;
+      color:#e05a97;
+      letter-spacing:.4px;
+      text-shadow:
+        -1px -1px 0 #ffffff,
+         1px -1px 0 #ffffff,
+        -1px  1px 0 #ffffff,
+         1px  1px 0 #ffffff,
+         0 10px 22px rgba(224,90,151,.40);
+    }
 
     nav{
       display:flex;
@@ -432,7 +455,7 @@
       gap:12px;
     }
 
-    /* Home studio image (smaller so it doesn’t force scrolling) */
+    /* Home studio image */
     .studioImg{
       display:block;
       max-width:100%;
