@@ -39,83 +39,107 @@
     *{ box-sizing:border-box; }
     html, body { height:100%; }
 
+    /* ✅ BOLDER BACKGROUND (colors unchanged) */
     body{
       margin:0;
       font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--text);
-      background: linear-gradient(180deg, var(--cream), var(--cream2));
       overflow-x:hidden;
       position:relative;
+
+      /* Bold layered glow + diagonal wash + base cream gradient */
+      background:
+        radial-gradient(1200px 820px at 12% 10%, rgba(246,166,201,.38), transparent 62%),
+        radial-gradient(1100px 780px at 88% 16%, rgba(251,211,230,.36), transparent 64%),
+        radial-gradient(950px 720px at 36% 92%, rgba(246,166,201,.28), transparent 64%),
+        radial-gradient(900px 700px at 92% 86%, rgba(246,166,201,.18), transparent 66%),
+        linear-gradient(135deg, rgba(246,166,201,.18), transparent 55%),
+        linear-gradient(180deg, var(--cream), var(--cream2));
+      background-attachment: fixed;
     }
 
-    /* ===== Eye-catching background layers ===== */
+    /* Bold “mic/headset-ish” abstract overlay (still just background) */
     body::before{
       content:"";
       position:fixed;
-      inset:-20%;
-      z-index:-3;
+      inset:-10%;
+      z-index:-2;
+      pointer-events:none;
+      opacity:.32;
+
+      /* soft rings + a few line sweeps (keeps your pink/cream palette) */
       background:
-        radial-gradient(900px 600px at 20% 10%, rgba(246,166,201,.22), transparent 60%),
-        radial-gradient(900px 650px at 85% 20%, rgba(251,211,230,.22), transparent 62%),
-        radial-gradient(900px 700px at 30% 90%, rgba(246,166,201,.16), transparent 62%);
-      filter: blur(0px);
+        radial-gradient(circle at 20% 35%, rgba(255,255,255,.65) 0 2px, transparent 3px),
+        radial-gradient(circle at 20% 35%, rgba(246,166,201,.45) 0 130px, transparent 131px),
+        radial-gradient(circle at 22% 37%, rgba(246,166,201,.25) 0 190px, transparent 191px),
+
+        radial-gradient(circle at 78% 30%, rgba(255,255,255,.55) 0 2px, transparent 3px),
+        radial-gradient(circle at 78% 30%, rgba(251,211,230,.40) 0 150px, transparent 151px),
+        radial-gradient(circle at 80% 32%, rgba(246,166,201,.20) 0 220px, transparent 221px),
+
+        linear-gradient(110deg, transparent 0 43%, rgba(255,255,255,.24) 44% 45%, transparent 46% 100%),
+        linear-gradient(110deg, transparent 0 60%, rgba(246,166,201,.18) 61% 62%, transparent 63% 100%),
+        linear-gradient(110deg, transparent 0 72%, rgba(251,211,230,.14) 73% 74%, transparent 75% 100%);
+      filter: blur(0.2px);
     }
 
-    /* Animated glow blobs */
+    /* ✅ Bolder animated glow blobs */
     .blobs{
       position:fixed;
       inset:0;
-      z-index:-2;
+      z-index:-1;
       pointer-events:none;
       overflow:hidden;
     }
     .blob{
       position:absolute;
-      width:520px;
-      height:520px;
+      width:560px;
+      height:560px;
       border-radius:50%;
-      filter: blur(40px);
-      opacity:.45;
-      background: radial-gradient(circle at 30% 30%, rgba(246,166,201,.75), rgba(246,166,201,.05));
+      filter: blur(44px);
+      opacity:.55;
+      background: radial-gradient(circle at 30% 30%, rgba(246,166,201,.85), rgba(246,166,201,.06));
       animation: floaty 14s ease-in-out infinite;
       mix-blend-mode:multiply;
     }
     .blob.b2{
-      width:640px; height:640px;
-      background: radial-gradient(circle at 30% 30%, rgba(251,211,230,.85), rgba(251,211,230,.06));
+      width:720px; height:720px;
+      background: radial-gradient(circle at 30% 30%, rgba(251,211,230,.90), rgba(251,211,230,.06));
       animation-duration: 18s;
-      opacity:.40;
+      opacity:.48;
     }
     .blob.b3{
-      width:420px; height:420px;
-      background: radial-gradient(circle at 30% 30%, rgba(246,166,201,.65), rgba(246,166,201,.05));
+      width:460px; height:460px;
+      background: radial-gradient(circle at 30% 30%, rgba(246,166,201,.75), rgba(246,166,201,.05));
       animation-duration: 16s;
-      opacity:.35;
+      opacity:.42;
     }
     @keyframes floaty{
       0%{ transform: translate(-20px, -10px) scale(1); }
-      50%{ transform: translate(40px, 30px) scale(1.06); }
+      50%{ transform: translate(44px, 34px) scale(1.08); }
       100%{ transform: translate(-20px, -10px) scale(1); }
     }
 
-    /* Subtle sparkle overlay (very light) */
+    /* ✅ More visible sparkles (still subtle, not glittery) */
     .sparkles{
       position:fixed;
       inset:0;
-      z-index:-1;
+      z-index:0;
       pointer-events:none;
-      opacity:.25;
+      opacity:.32;
       background-image:
-        radial-gradient(circle at 10% 20%, rgba(246,166,201,.35) 0 1px, transparent 2px),
-        radial-gradient(circle at 30% 70%, rgba(246,166,201,.28) 0 1px, transparent 2px),
-        radial-gradient(circle at 60% 30%, rgba(246,166,201,.30) 0 1px, transparent 2px),
-        radial-gradient(circle at 85% 60%, rgba(246,166,201,.26) 0 1px, transparent 2px);
-      background-size: 240px 240px;
+        radial-gradient(circle at 10% 20%, rgba(246,166,201,.42) 0 1px, transparent 2px),
+        radial-gradient(circle at 20% 40%, rgba(251,211,230,.40) 0 1px, transparent 2px),
+        radial-gradient(circle at 30% 70%, rgba(246,166,201,.38) 0 1px, transparent 2px),
+        radial-gradient(circle at 60% 30%, rgba(246,166,201,.40) 0 1px, transparent 2px),
+        radial-gradient(circle at 85% 60%, rgba(251,211,230,.36) 0 1px, transparent 2px),
+        radial-gradient(circle at 75% 80%, rgba(246,166,201,.34) 0 1px, transparent 2px);
+      background-size: 220px 220px;
       animation: twinkle 10s ease-in-out infinite;
     }
     @keyframes twinkle{
-      0%,100%{ opacity:.18; }
-      50%{ opacity:.30; }
+      0%,100%{ opacity:.24; }
+      50%{ opacity:.36; }
     }
 
     a{ color:inherit; }
@@ -128,6 +152,8 @@
       display:flex;
       flex-direction:column;
       gap:14px;
+      position:relative;
+      z-index:1; /* keep content above sparkles */
     }
 
     /* ===== TOP NAV ===== */
@@ -148,22 +174,23 @@
       white-space:nowrap;
     }
 
-    /* ✅ Bigger + darker pink + white outline for readability */
-    .brand .first,
-    .brand .last{
-      font-family:'Allura', cursive;
-      font-size:58px;
-      line-height:1;
-      color:#e05a97;
-      letter-spacing:.4px;
+  .brand .first,
+.brand .last{
+  font-family:'Allura', cursive;
+  font-size:58px;              /* ⬅️ bigger */
+  line-height:1;
+  color:#e05a97;               /* ⬅️ darker pink */
+  letter-spacing:.4px;
 
-      text-shadow:
-        -1px -1px 0 #ffffff,
-         1px -1px 0 #ffffff,
-        -1px  1px 0 #ffffff,
-         1px  1px 0 #ffffff,
-         0 10px 22px rgba(224,90,151,.45);
-    }
+  /* soft white outline + glow */
+  text-shadow:
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,
+     0 10px 22px rgba(224,90,151,.45);
+}
+
 
     nav{
       display:flex;
@@ -405,20 +432,6 @@
       gap:12px;
     }
 
-    /* ✅ Home page mic visual (uses your uploaded file name) */
-    .gear-visual{
-      display:flex;
-      justify-content:center;
-      margin:10px 0 4px;
-    }
-    .gear-visual img{
-      max-width:220px;
-      width:100%;
-      height:auto;
-      opacity:.92;
-      filter: drop-shadow(0 12px 24px rgba(0,0,0,.22)) contrast(1.05);
-    }
-
     /* Home studio image (smaller so it doesn’t force scrolling) */
     .studioImg{
       display:block;
@@ -456,7 +469,7 @@
     @media (max-width: 640px){
       nav{ gap:10px; }
       .pill{ width:100%; justify-content:center; }
-      .brand .first, .brand .last{ font-size:46px; }
+      .brand .first, .brand .last{ font-size:40px; }
     }
 
     /* HARD LOCK: show home hero only on Home */
@@ -468,9 +481,9 @@
 <body>
   <!-- Background flair -->
   <div class="blobs" aria-hidden="true">
-    <div class="blob" style="left:-140px; top:-120px;"></div>
-    <div class="blob b2" style="right:-220px; top:-180px;"></div>
-    <div class="blob b3" style="left:40%; bottom:-220px;"></div>
+    <div class="blob" style="left:-160px; top:-140px;"></div>
+    <div class="blob b2" style="right:-260px; top:-220px;"></div>
+    <div class="blob b3" style="left:42%; bottom:-240px;"></div>
   </div>
   <div class="sparkles" aria-hidden="true"></div>
 
@@ -525,11 +538,6 @@
             <div class="card" id="home-hero">
               <div class="sectionTitle">
                 <h1>Voice Actor</h1>
-              </div>
-
-              <!-- ✅ Mic image under Voice Actor (Home only) -->
-              <div class="gear-visual">
-                <img src="rode mic.png" alt="Rode NT1 microphone">
               </div>
 
               <p class="small" style="margin:0;">
