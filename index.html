@@ -75,6 +75,7 @@
         radial-gradient(circle at 18% 34%, rgba(246,166,201,.22) 0 160px, transparent 161px),
         radial-gradient(circle at 82% 30%, rgba(251,211,230,.20) 0 190px, transparent 191px),
 
+        /* soft diagonal light sweep */
         linear-gradient(115deg, transparent 0 48%, rgba(255,255,255,.18) 49% 50%, transparent 51% 100%),
         linear-gradient(115deg, transparent 0 68%, rgba(246,166,201,.12) 69% 70%, transparent 71% 100%);
 
@@ -91,26 +92,7 @@
       filter: blur(0.2px);
     }
 
-    /* ✅ Watermark: faint mic + headset silhouette (no files needed) */
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      pointer-events:none;
-
-      /* SVG is cream/pink-ish and very low opacity */
-      opacity:.12;                 /* adjust: .06 (fainter) to .12 (stronger) */
-      mix-blend-mode:multiply;
-      background-repeat:no-repeat;
-      background-position: 82% 56%;
-      background-size: min(760px, 70vw);
-
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' viewBox='0 0 1200 900'%3E%3Cg fill='none' stroke='%23e05a97' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Headset band --%3E%3Cpath d='M260 420 C260 250 380 140 540 140 C700 140 820 250 820 420'/%3E%3C!-- Left earcup --%3E%3Cpath d='M250 430 C230 430 220 455 220 485 L220 560 C220 600 245 630 285 630 L330 630 C360 630 380 605 380 575 L380 485 C380 455 350 430 320 430 Z'/%3E%3C!-- Right earcup --%3E%3Cpath d='M830 430 C850 430 860 455 860 485 L860 560 C860 600 835 630 795 630 L750 630 C720 630 700 605 700 575 L700 485 C700 455 730 430 760 430 Z'/%3E%3C!-- Mic stand + body (Rode-ish silhouette) --%3E%3Cpath d='M560 300 L560 720'/%3E%3Cpath d='M510 360 C510 320 540 290 580 290 C620 290 650 320 650 360 L650 520 C650 560 620 590 580 590 C540 590 510 560 510 520 Z'/%3E%3Cpath d='M530 610 L630 610'/%3E%3Cpath d='M520 720 L680 720'/%3E%3C!-- Cable swoosh --%3E%3Cpath d='M650 520 C740 560 820 580 900 610'/%3E%3C/g%3E%3C/svg%3E");
-      filter: blur(0.2px);
-    }
-
-    /* ✅ soft animated glow blobs (kept classy) */
+    /* ✅ subtle animated glow blobs (kept classy) */
     .blobs{
       position:fixed;
       inset:0;
@@ -165,6 +147,27 @@
     @keyframes twinkle{
       0%,100%{ opacity:.16; }
       50%{ opacity:.24; }
+    }
+
+    /* ✅ Abstract line overlay (professional + subtle) */
+    .lines{
+      position:fixed;
+      inset:0;
+      z-index:-2;            /* behind content, above base background */
+      pointer-events:none;
+      opacity:.22;           /* overall strength */
+      background:
+        /* long diagonal hairlines */
+        linear-gradient(135deg, transparent 0 48%, rgba(255,255,255,.22) 49% 49.3%, transparent 49.6% 100%),
+        linear-gradient(135deg, transparent 0 62%, rgba(246,166,201,.18) 63% 63.35%, transparent 63.7% 100%),
+        linear-gradient(135deg, transparent 0 76%, rgba(251,211,230,.16) 77% 77.35%, transparent 77.7% 100%),
+
+        /* soft arc “strings” */
+        radial-gradient(900px 500px at 20% 25%, transparent 55%, rgba(255,255,255,.18) 56%, transparent 57%),
+        radial-gradient(900px 520px at 80% 35%, transparent 58%, rgba(246,166,201,.14) 59%, transparent 60%),
+        radial-gradient(980px 560px at 55% 85%, transparent 60%, rgba(251,211,230,.12) 61%, transparent 62%);
+      filter: blur(.2px);
+      mix-blend-mode:multiply;
     }
 
     a{ color:inherit; }
@@ -501,36 +504,6 @@
   </style>
 </head>
 
-/* Home page background mic (decorative) */
-#page-home{
-  position: relative;
-}
-
-#page-home::after{
-  content:"";
-  position:absolute;
-  top:-40px;
-  right:-40px;
-  width:420px;
-  height:420px;
-
-  background-image: url("rode mic.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top right;
-
-  opacity: 0.12;               /* subtle + professional */
-  pointer-events: none;        /* prevents blocking clicks */
-  z-index: 0;
-}
-
-/* Ensure home card stays ABOVE the background mic */
-#page-home .card{
-  position: relative;
-  z-index: 2;
-}
-
-
 <body>
   <!-- Background flair -->
   <div class="blobs" aria-hidden="true">
@@ -539,6 +512,7 @@
     <div class="blob b3" style="left:42%; bottom:-240px;"></div>
   </div>
   <div class="sparkles" aria-hidden="true"></div>
+  <div class="lines" aria-hidden="true"></div>
 
   <div class="wrap">
 
