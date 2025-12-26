@@ -43,79 +43,49 @@
       margin:0;
       font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--text);
-      background: linear-gradient(180deg, var(--cream), var(--cream2));
+
+      /* ✅ NEW background (matches your reference style but keeps your colors) */
+      background:
+        radial-gradient(1200px 800px at 30% 25%, rgba(246,166,201,.22), transparent 60%),
+        radial-gradient(1200px 800px at 70% 70%, rgba(251,211,230,.20), transparent 62%),
+        linear-gradient(135deg, rgba(246,166,201,.10), transparent 55%),
+        linear-gradient(180deg, var(--cream), var(--cream2));
+
       overflow-x:hidden;
       position:relative;
     }
 
-    /* ===== Eye-catching background layers ===== */
+    /* ✅ Soft “wash” */
     body::before{
       content:"";
-      position:fixed;
-      inset:-20%;
-      z-index:-3;
-      background:
-        radial-gradient(900px 600px at 20% 10%, rgba(246,166,201,.22), transparent 60%),
-        radial-gradient(900px 650px at 85% 20%, rgba(251,211,230,.22), transparent 62%),
-        radial-gradient(900px 700px at 30% 90%, rgba(246,166,201,.16), transparent 62%);
-      filter: blur(0px);
-    }
-
-    /* Animated glow blobs */
-    .blobs{
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      pointer-events:none;
-      overflow:hidden;
-    }
-    .blob{
-      position:absolute;
-      width:520px;
-      height:520px;
-      border-radius:50%;
-      filter: blur(40px);
-      opacity:.45;
-      background: radial-gradient(circle at 30% 30%, rgba(246,166,201,.75), rgba(246,166,201,.05));
-      animation: floaty 14s ease-in-out infinite;
-      mix-blend-mode:multiply;
-    }
-    .blob.b2{
-      width:640px; height:640px;
-      background: radial-gradient(circle at 30% 30%, rgba(251,211,230,.85), rgba(251,211,230,.06));
-      animation-duration: 18s;
-      opacity:.40;
-    }
-    .blob.b3{
-      width:420px; height:420px;
-      background: radial-gradient(circle at 30% 30%, rgba(246,166,201,.65), rgba(246,166,201,.05));
-      animation-duration: 16s;
-      opacity:.35;
-    }
-    @keyframes floaty{
-      0%{ transform: translate(-20px, -10px) scale(1); }
-      50%{ transform: translate(40px, 30px) scale(1.06); }
-      100%{ transform: translate(-20px, -10px) scale(1); }
-    }
-
-    /* Subtle sparkle overlay (very light) */
-    .sparkles{
       position:fixed;
       inset:0;
       z-index:-1;
       pointer-events:none;
-      opacity:.25;
-      background-image:
-        radial-gradient(circle at 10% 20%, rgba(246,166,201,.35) 0 1px, transparent 2px),
-        radial-gradient(circle at 30% 70%, rgba(246,166,201,.28) 0 1px, transparent 2px),
-        radial-gradient(circle at 60% 30%, rgba(246,166,201,.30) 0 1px, transparent 2px),
-        radial-gradient(circle at 85% 60%, rgba(246,166,201,.26) 0 1px, transparent 2px);
-      background-size: 240px 240px;
-      animation: twinkle 10s ease-in-out infinite;
+      background:
+        radial-gradient(900px 700px at 25% 35%, rgba(246,166,201,.22), transparent 60%),
+        radial-gradient(900px 700px at 70% 40%, rgba(251,211,230,.22), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.25), rgba(255,255,255,0));
     }
-    @keyframes twinkle{
-      0%,100%{ opacity:.18; }
-      50%{ opacity:.30; }
+
+    /* ✅ White line-art mic + pop filter + swirls (blended into background) */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      pointer-events:none;
+
+      background-image:
+        url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20720'%3E%3Cdefs%3E%3CradialGradient%20id='g'%20cx='50%25'%20cy='50%25'%20r='70%25'%3E%3Cstop%20offset='0%25'%20stop-color='%23ffffff'%20stop-opacity='.20'/%3E%3Cstop%20offset='100%25'%20stop-color='%23ffffff'%20stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect%20width='1280'%20height='720'%20fill='url(%23g)'/%3E%3Cg%20fill='none'%20stroke='%23ffffff'%20stroke-opacity='.23'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3C!--%20MIC%20BODY%20(left)%20--%3E%3Cpath%20d='M140%20200%20c0-40%2032-72%2072-72%20s72%2032%2072%2072%20v160%20c0%2040-32%2072-72%2072%20s-72-32-72-72z'/%3E%3Cpath%20d='M170%20155%20c20-14%2044-22%2070-22%20s50%208%2070%2022'/%3E%3Cpath%20d='M182%20188%20h140'/%3E%3Cpath%20d='M182%20225%20h140'/%3E%3Cpath%20d='M182%20262%20h140'/%3E%3Cpath%20d='M182%20299%20h140'/%3E%3Cpath%20d='M182%20336%20h140'/%3E%3C!--%20SHOCK%20MOUNT%20--%3E%3Cpath%20d='M155%20340%20l-60%2040%20M155%20380%20l-60-10%20M155%20420%20l-60%2010%20M155%20460%20l-60-40'/%3E%3Cpath%20d='M310%20340%20l60%2040%20M310%20380%20l60-10%20M310%20420%20l60%2010%20M310%20460%20l60-40'/%3E%3Cpath%20d='M120%20390%20c60-70%20250-70%20310%200'/%3E%3Cpath%20d='M120%20410%20c60%2070%20250%2070%20310%200'/%3E%3C!--%20POP%20FILTER%20(circle)%20--%3E%3Ccircle%20cx='520'%20cy='230'%20r='120'/%3E%3Ccircle%20cx='520'%20cy='230'%20r='142'%20stroke-opacity='.16'/%3E%3Cpath%20d='M430%20230%20h180'/%3E%3C!--%20ARM%20--%3E%3Cpath%20d='M350%20395%20C420%20340%20440%20310%20410%20280%20C380%20250%20380%20250%20395%20235%20C420%20195%20460%20180%20520%20180'/%3E%3Cpath%20d='M410%20280%20h70'/%3E%3Cpath%20d='M470%20280%20v-50'%3E%3C/path%3E%3C!--%20SWIRLS%20top-right%20--%3E%3Cpath%20d='M980%2080%20c120-60%20240%2030%20140%20110%20c-70%2055-170%200-130-60%20c35-50%20150-40%20160%2025'%3E%3C/path%3E%3Cpath%20d='M1060%20190%20c120-60%20240%2030%20140%20110%20c-70%2055-170%200-130-60%20c35-50%20150-40%20160%2025'%3E%3C/path%3E%3Cpath%20d='M1120%20310%20c120-60%20240%2030%20140%20110%20c-70%2055-170%200-130-60%20c35-50%20150-40%20160%2025'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+
+      background-repeat:no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      opacity:.55;           /* adjust: .40 subtle / .70 stronger */
+      filter: blur(.2px);
+      mix-blend-mode: screen;
     }
 
     a{ color:inherit; }
@@ -400,19 +370,17 @@
 
     /* Home studio image (smaller so it doesn’t force scrolling) */
     .studioImg{
-  display:block;
-  max-width:100%;
-  max-height:280px;      /* keeps page one-screen */
-  height:auto;
-  width:auto;            /* 👈 key: lets image size itself */
-  object-fit:contain;
-  margin:12px auto 0;    /* centers image */
-  border-radius:18px;
-  border:2px solid var(--borderPink);
-  background:transparent;
-}
-
-
+      display:block;
+      max-width:100%;
+      max-height:280px;
+      height:auto;
+      width:auto;
+      object-fit:contain;
+      margin:12px auto 0;
+      border-radius:18px;
+      border:2px solid var(--borderPink);
+      background:transparent;
+    }
 
     .list{
       margin:10px 0 0;
@@ -447,14 +415,6 @@
 </head>
 
 <body>
-  <!-- Background flair -->
-  <div class="blobs" aria-hidden="true">
-    <div class="blob" style="left:-140px; top:-120px;"></div>
-    <div class="blob b2" style="right:-220px; top:-180px;"></div>
-    <div class="blob b3" style="left:40%; bottom:-220px;"></div>
-  </div>
-  <div class="sparkles" aria-hidden="true"></div>
-
   <div class="wrap">
 
     <!-- TOP NAV -->
