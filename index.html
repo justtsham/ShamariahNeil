@@ -149,26 +149,38 @@
       50%{ opacity:.24; }
     }
 
-    /* ✅ Abstract line overlay (professional + subtle) */
-    .lines{
-      position:fixed;
-      inset:0;
-      z-index:-2;            /* behind content, above base background */
-      pointer-events:none;
-      opacity:.22;           /* overall strength */
-      background:
-        /* long diagonal hairlines */
-        linear-gradient(135deg, transparent 0 48%, rgba(255,255,255,.22) 49% 49.3%, transparent 49.6% 100%),
-        linear-gradient(135deg, transparent 0 62%, rgba(246,166,201,.18) 63% 63.35%, transparent 63.7% 100%),
-        linear-gradient(135deg, transparent 0 76%, rgba(251,211,230,.16) 77% 77.35%, transparent 77.7% 100%),
+    /* ✅ Abstract line overlay (more visible, still professional) */
+.lines{
+  position:fixed;
+  inset:0;
+  z-index:0;              /* bring above sparkles (sparkles is 0 too, but this is inserted after) */
+  pointer-events:none;
+  opacity:.55;            /* was too low */
+  mix-blend-mode: normal; /* multiply can hide lines on light backgrounds */
+  filter: blur(.15px);
 
-        /* soft arc “strings” */
-        radial-gradient(900px 500px at 20% 25%, transparent 55%, rgba(255,255,255,.18) 56%, transparent 57%),
-        radial-gradient(900px 520px at 80% 35%, transparent 58%, rgba(246,166,201,.14) 59%, transparent 60%),
-        radial-gradient(980px 560px at 55% 85%, transparent 60%, rgba(251,211,230,.12) 61%, transparent 62%);
-      filter: blur(.2px);
-      mix-blend-mode:multiply;
-    }
+  background:
+    /* lots of thin diagonal lines */
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,.22) 0px,
+      rgba(255,255,255,.22) 1px,
+      transparent 1px,
+      transparent 28px
+    ),
+    /* a second set with pink tint, different spacing (adds depth) */
+    repeating-linear-gradient(
+      155deg,
+      rgba(246,166,201,.18) 0px,
+      rgba(246,166,201,.18) 1px,
+      transparent 1px,
+      transparent 34px
+    ),
+    /* a few soft “arc strings” */
+    radial-gradient(900px 520px at 20% 30%, transparent 58%, rgba(255,255,255,.18) 59%, transparent 60%),
+    radial-gradient(980px 560px at 82% 32%, transparent 60%, rgba(246,166,201,.14) 61%, transparent 62%),
+    radial-gradient(1100px 600px at 55% 88%, transparent 62%, rgba(251,211,230,.14) 63%, transparent 64%);
+}
 
     a{ color:inherit; }
 
@@ -730,3 +742,4 @@
   </script>
 </body>
 </html>
+
