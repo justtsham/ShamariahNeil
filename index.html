@@ -150,37 +150,34 @@
     }
 
     /* ✅ Abstract line overlay (more visible, still professional) */
-.lines{
-  position:fixed;
-  inset:0;
-  z-index:0;              /* bring above sparkles (sparkles is 0 too, but this is inserted after) */
-  pointer-events:none;
-  opacity:.70;            /* was too low */
-  mix-blend-mode: normal; /* multiply can hide lines on light backgrounds */
-  filter: blur(.15px);
+    .lines{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      opacity:.70;
+      mix-blend-mode: normal;
+      filter: blur(.15px);
 
-  background:
-    /* lots of thin diagonal lines */
-    repeating-linear-gradient(
-      135deg,
-      rgba(255,255,255,.22) 0px,
-      rgba(255,255,255,.22) 1px,
-      transparent 1px,
-      transparent 28px
-    ),
-    /* a second set with pink tint, different spacing (adds depth) */
-    repeating-linear-gradient(
-      155deg,
-      rgba(246,166,201,.18) 0px,
-      rgba(246,166,201,.18) 1px,
-      transparent 1px,
-      transparent 34px
-    ),
-    /* a few soft “arc strings” */
-    radial-gradient(900px 520px at 20% 30%, transparent 58%, rgba(255,255,255,.18) 59%, transparent 60%),
-    radial-gradient(980px 560px at 82% 32%, transparent 60%, rgba(246,166,201,.14) 61%, transparent 62%),
-    radial-gradient(1100px 600px at 55% 88%, transparent 62%, rgba(251,211,230,.14) 63%, transparent 64%);
-}
+      background:
+        repeating-linear-gradient(
+          135deg,
+          rgba(255,255,255,.22) 0px,
+          rgba(255,255,255,.22) 1px,
+          transparent 1px,
+          transparent 28px
+        ),
+        repeating-linear-gradient(
+          155deg,
+          rgba(246,166,201,.18) 0px,
+          rgba(246,166,201,.18) 1px,
+          transparent 1px,
+          transparent 34px
+        ),
+        radial-gradient(900px 520px at 20% 30%, transparent 58%, rgba(255,255,255,.18) 59%, transparent 60%),
+        radial-gradient(980px 560px at 82% 32%, transparent 60%, rgba(246,166,201,.14) 61%, transparent 62%),
+        radial-gradient(1100px 600px at 55% 88%, transparent 62%, rgba(251,211,230,.14) 63%, transparent 64%);
+    }
 
     a{ color:inherit; }
 
@@ -450,6 +447,46 @@
       display:block;
     }
 
+    /* ===== VISUAL DEMOS (VIDEO) ===== */
+    .videoGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+
+    .videoCard{
+      border-radius:18px;
+      border:2px solid var(--borderPinkSoft);
+      background: rgba(255,255,255,.80);
+      padding:12px;
+      box-shadow: var(--shadow2);
+    }
+
+    .videoTitle{
+      font-weight:900;
+      margin:2px 0 8px;
+    }
+
+    .videoMeta{
+      font-size:12px;
+      opacity:.75;
+      margin:0 0 10px;
+    }
+
+    .videoWrap{
+      border-radius:14px;
+      overflow:hidden;
+      border:2px solid var(--borderPink);
+      background:#fff;
+    }
+
+    .videoWrap video{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+
     /* Pages */
     .page{ display:none; }
     .page.active{ display:block; }
@@ -502,6 +539,11 @@
       .headshot{ max-height:420px; }
       #page-home{ height:auto; }
       #page-home .card{ height:auto; justify-content:flex-start; }
+    }
+
+    /* Stack video cards on mobile */
+    @media (max-width: 760px){
+      .videoGrid{ grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px){
@@ -611,7 +653,8 @@
                 <h1>Demos</h1>
               </div>
 
-              <div class="small">Commercial Demo</div>
+              <!-- AUDIO DEMOS -->
+              <div class="small" style="margin-top:2px;">Commercial Demo</div>
               <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=2">
                 Your browser does not support the audio element.
               </audio>
@@ -619,6 +662,55 @@
               <p class="small" style="margin-top:10px;">
                 <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Open / Download</a>
               </p>
+
+              <!-- VISUAL DEMOS -->
+              <div style="height:14px;"></div>
+
+              <div class="sectionTitle" style="padding-top:4px;">
+                <h1 style="font-size:22px; margin:0;">Visual Demos</h1>
+              </div>
+
+              <p class="small" style="margin:0;">
+                Character / scene samples (video with audio).
+              </p>
+
+              <div class="videoGrid">
+
+                <!-- Pashmina -->
+                <div class="videoCard">
+                  <div class="videoTitle">Pashmina</div>
+                  <p class="videoMeta">File: Pashmina_SN</p>
+
+                  <div class="videoWrap">
+                    <video controls preload="metadata" playsinline>
+                      <source src="/Pashmina_SN.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+
+                  <p class="small" style="margin:10px 0 0;">
+                    <a class="btn" href="/Pashmina_SN.mp4" target="_blank" rel="noopener">Open / Download</a>
+                  </p>
+                </div>
+
+                <!-- Aspen -->
+                <div class="videoCard">
+                  <div class="videoTitle">Aspen</div>
+                  <p class="videoMeta">File: Aspen_SN</p>
+
+                  <div class="videoWrap">
+                    <video controls preload="metadata" playsinline>
+                      <source src="/Aspen_SN.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+
+                  <p class="small" style="margin:10px 0 0;">
+                    <a class="btn" href="/Aspen_SN.mp4" target="_blank" rel="noopener">Open / Download</a>
+                  </p>
+                </div>
+
+              </div>
             </div>
           </section>
 
@@ -723,6 +815,11 @@
 
     function tabFromHash(){
       const h = (location.hash || "#home").replace("#","");
+
+      // Normalize common hashes
+      if (h === "demo") return "demos";
+      if (h === "studios") return "studio";
+
       return map[h] ? h : "home";
     }
 
