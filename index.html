@@ -457,17 +457,6 @@
       margin-top:12px;
     }
 
-    .videoTitle{
-      font-weight:900;
-      margin:2px 0 8px;
-    }
-
-    .videoMeta{
-      font-size:12px;
-      opacity:.75;
-      margin:0 0 10px;
-    }
-
     .videoWrap{
       border-radius:14px;
       overflow:hidden;
@@ -595,7 +584,7 @@
     <div class="panel">
       <div class="panelInner">
 
-        <!-- LEFT: HEADSHOT -->
+        <!-- LEFT: HEADSHOT (default on all tabs) -->
         <div class="headshotWrap">
           <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot" />
         </div>
@@ -664,9 +653,6 @@
               </p>
 
               <div class="videoCard">
-                <div class="videoTitle">Shamariah Neil — Visual Reel</div>
-                <p class="videoMeta">File: shamariahneil_visualreel.mp4</p>
-
                 <div class="videoWrap">
                   <video controls preload="metadata" playsinline>
                     <source src="/shamariahneil_visualreel.mp4" type="video/mp4">
@@ -773,11 +759,29 @@
       contact: "page-contact"
     };
 
+    // Swap the LEFT headshot depending on the active tab
+    const headshotEl = document.querySelector(".headshot");
+    const headshots = {
+      home: "Commercial Headshot.jpg",
+      demos: "Shamariah Neil Headshot.jpg",
+      studio: "Commercial Headshot.jpg",
+      about: "Commercial Headshot.jpg",
+      contact: "Commercial Headshot.jpg"
+    };
+
+    function setHeadshot(tab){
+      if (!headshotEl) return;
+      const src = headshots[tab] || headshots.home;
+      headshotEl.src = src;
+      headshotEl.alt = tab === "demos" ? "Shamariah Neil Headshot" : "Commercial Headshot";
+    }
+
     function showTab(tab){
       const id = map[tab] || map.home;
       document.querySelectorAll(".page").forEach(s => s.classList.remove("active"));
       const el = document.getElementById(id);
       if (el) el.classList.add("active");
+      setHeadshot(tab);
     }
 
     function tabFromHash(){
