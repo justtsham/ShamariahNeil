@@ -448,19 +448,13 @@
     }
 
     /* ===== VISUAL REEL (VIDEO) ===== */
-    .videoGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      margin-top:12px;
-    }
-
     .videoCard{
       border-radius:18px;
       border:2px solid var(--borderPinkSoft);
       background: rgba(255,255,255,.80);
       padding:12px;
       box-shadow: var(--shadow2);
+      margin-top:12px;
     }
 
     .videoTitle{
@@ -541,11 +535,6 @@
       #page-home .card{ height:auto; justify-content:flex-start; }
     }
 
-    /* Stack video cards on mobile */
-    @media (max-width: 760px){
-      .videoGrid{ grid-template-columns: 1fr; }
-    }
-
     @media (max-width: 640px){
       nav{ gap:10px; }
       .pill{ width:100%; justify-content:center; }
@@ -579,7 +568,7 @@
 
       <nav aria-label="Primary">
         <a class="tab" href="#home" data-tab="home">Home</a>
-        <a class="tab" href="#demos" data-tab="demos">Demos</a>
+        <a class="tab" href="#demos" data-tab="demos">Demo/Reel</a>
         <a class="tab" href="#studio" data-tab="studio">Home Studio</a>
         <a class="tab" href="#about" data-tab="about">About</a>
         <a class="tab" href="#contact" data-tab="contact">Contact Me</a>
@@ -646,14 +635,14 @@
             </div>
           </section>
 
-          <!-- DEMOS/REEL -->
-          <section id="page-demos/reel" class="page" aria-label="Demos/Reel">
+          <!-- DEMO/REEL -->
+          <section id="page-demos" class="page" aria-label="Demo/Reel">
             <div class="card">
               <div class="sectionTitle">
-                <h1>Demos/Reel</h1>
+                <h1>Demo/Reel</h1>
               </div>
 
-              <!-- AUDIO DEMOS -->
+              <!-- AUDIO DEMO -->
               <div class="small" style="margin-top:2px;">Commercial Demo</div>
               <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=2">
                 Your browser does not support the audio element.
@@ -667,32 +656,27 @@
               <div style="height:14px;"></div>
 
               <div class="sectionTitle" style="padding-top:4px;">
-                <h1 style="font-size:28px; margin:0;">Visual Reel</h1>
+                <h1 style="font-size:22px; margin:0;">Visual Reel</h1>
               </div>
 
               <p class="small" style="margin:0;">
-                Character / scene samples (video with audio).
+                Visual reel sample (video with audio).
               </p>
 
-              <div class="videoGrid">
+              <div class="videoCard">
+                <div class="videoTitle">Shamariah Neil — Visual Reel</div>
+                <p class="videoMeta">File: shamariahneil_visualreel.mp4</p>
 
-                <!-- Visual Reel -->
-                <div class="videoCard">
-                  <div class="videoTitle">Visual Reel</div>
-                  <p class="videoMeta">File: shamariahneil_visualreel</p>
-
-                  <div class="videoWrap">
-                    <video controls preload="metadata" playsinline>
-                      <source src="/shamariahneil_visualreel.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-
-                  <p class="small" style="margin:10px 0 0;">
-                    <a class="btn" href="/shamariahneil_visualreel.mp4" target="_blank" rel="noopener">Open / Download</a>
-                  </p>
+                <div class="videoWrap">
+                  <video controls preload="metadata" playsinline>
+                    <source src="/shamariahneil_visualreel.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
 
+                <p class="small" style="margin:10px 0 0;">
+                  <a class="btn" href="/shamariahneil_visualreel.mp4" target="_blank" rel="noopener">Open / Download</a>
+                </p>
               </div>
             </div>
           </section>
@@ -800,8 +784,7 @@
       const h = (location.hash || "#home").replace("#","");
 
       // Normalize common hashes
-      if (h === "demo") return "demos";
-      if (h === "studios") return "studio";
+      if (h === "demo" || h === "reel" || h === "demo-reel" || h === "demoreel") return "demos";
 
       return map[h] ? h : "home";
     }
