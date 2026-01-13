@@ -19,12 +19,14 @@
       --pink1:#f6a6c9;
       --pink2:#fbd3e6;
 
+      /* super soft pink that blends with cream */
       --softPink: rgba(246,166,201,.14);
       --softPink2: rgba(251,211,230,.16);
 
       --text:#2a0820;
       --card: rgba(255,255,255,.86);
 
+      /* all box borders pink */
       --borderPink: rgba(246,166,201,.78);
       --borderPinkSoft: rgba(246,166,201,.55);
 
@@ -37,6 +39,7 @@
     *{ box-sizing:border-box; }
     html, body { height:100%; }
 
+    /* ✅ Bold + premium mesh background (same palette) */
     body{
       margin:0;
       font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
@@ -54,6 +57,7 @@
       background-attachment: fixed;
     }
 
+    /* ✅ subtle “pearl texture” + sheen */
     body::before{
       content:"";
       position:fixed;
@@ -67,8 +71,11 @@
         radial-gradient(circle at 38% 62%, rgba(255,255,255,.45) 0 1.1px, transparent 2px),
         radial-gradient(circle at 72% 28%, rgba(255,255,255,.50) 0 1.1px, transparent 2px),
         radial-gradient(circle at 88% 72%, rgba(255,255,255,.40) 0 1px, transparent 2px),
+
         radial-gradient(circle at 18% 34%, rgba(246,166,201,.22) 0 160px, transparent 161px),
         radial-gradient(circle at 82% 30%, rgba(251,211,230,.20) 0 190px, transparent 191px),
+
+        /* soft diagonal light sweep */
         linear-gradient(115deg, transparent 0 48%, rgba(255,255,255,.18) 49% 50%, transparent 51% 100%),
         linear-gradient(115deg, transparent 0 68%, rgba(246,166,201,.12) 69% 70%, transparent 71% 100%);
 
@@ -85,6 +92,7 @@
       filter: blur(0.2px);
     }
 
+    /* ✅ subtle animated glow blobs (kept classy) */
     .blobs{
       position:fixed;
       inset:0;
@@ -121,6 +129,7 @@
       100%{ transform: translate(-18px, -10px) scale(1); }
     }
 
+    /* ✅ subtle premium twinkle */
     .sparkles{
       position:fixed;
       inset:0;
@@ -140,6 +149,7 @@
       50%{ opacity:.24; }
     }
 
+    /* ✅ Abstract line overlay (more visible, still professional) */
     .lines{
       position:fixed;
       inset:0;
@@ -150,8 +160,20 @@
       filter: blur(.15px);
 
       background:
-        repeating-linear-gradient(135deg, rgba(255,255,255,.22) 0px, rgba(255,255,255,.22) 1px, transparent 1px, transparent 28px),
-        repeating-linear-gradient(155deg, rgba(246,166,201,.18) 0px, rgba(246,166,201,.18) 1px, transparent 1px, transparent 34px),
+        repeating-linear-gradient(
+          135deg,
+          rgba(255,255,255,.22) 0px,
+          rgba(255,255,255,.22) 1px,
+          transparent 1px,
+          transparent 28px
+        ),
+        repeating-linear-gradient(
+          155deg,
+          rgba(246,166,201,.18) 0px,
+          rgba(246,166,201,.18) 1px,
+          transparent 1px,
+          transparent 34px
+        ),
         radial-gradient(900px 520px at 20% 30%, transparent 58%, rgba(255,255,255,.18) 59%, transparent 60%),
         radial-gradient(980px 560px at 82% 32%, transparent 60%, rgba(246,166,201,.14) 61%, transparent 62%),
         radial-gradient(1100px 600px at 55% 88%, transparent 62%, rgba(251,211,230,.14) 63%, transparent 64%);
@@ -171,6 +193,7 @@
       z-index:1;
     }
 
+    /* ===== TOP NAV ===== */
     .topbar{
       display:flex;
       align-items:center;
@@ -270,6 +293,7 @@
     }
     .pill:hover{ transform: translateY(-1px); }
 
+    /* ===== MAIN PANEL ===== */
     .panel{
       position:relative;
       border-radius:30px;
@@ -318,6 +342,7 @@
       min-height:0;
     }
 
+    /* LEFT: headshot container stays the same on EVERY tab */
     .headshotWrap{
       background: rgba(255,255,255,.28);
       border:2px solid var(--borderPink);
@@ -338,6 +363,7 @@
       background:#fff;
     }
 
+    /* RIGHT: content card */
     .card{
       background: var(--card);
       border-radius:24px;
@@ -388,6 +414,9 @@
       margin-top:12px;
     }
 
+    .demoName{ font-weight:900; }
+    .demoMeta{ font-size:12px; opacity:.75; margin-top:4px; }
+
     .btn{
       border-radius:999px;
       padding:10px 14px;
@@ -416,6 +445,7 @@
       display:block;
     }
 
+    /* ===== VISUAL REEL (VIDEO) ===== */
     .videoCard{
       border-radius:18px;
       border:2px solid var(--borderPinkSoft);
@@ -424,23 +454,23 @@
       box-shadow: var(--shadow2);
       margin-top:12px;
     }
-
     .videoWrap{
       border-radius:14px;
       overflow:hidden;
       border:2px solid var(--borderPink);
       background:#fff;
     }
-
     .videoWrap video{
       display:block;
       width:100%;
       height:auto;
     }
 
+    /* Pages */
     .page{ display:none; }
     .page.active{ display:block; }
 
+    /* Home: stretch without scrolling */
     #page-home{
       height:100%;
       min-height:0;
@@ -456,6 +486,7 @@
       gap:12px;
     }
 
+    /* Home studio image */
     .studioImg{
       display:block;
       max-width:100%;
@@ -495,12 +526,14 @@
       .brand .first, .brand .last{ font-size:40px; }
     }
 
+    /* HARD LOCK: show home hero only on Home */
     #home-hero{ display:none !important; }
     #page-home.active #home-hero{ display:block !important; }
   </style>
 </head>
 
 <body>
+  <!-- Background flair -->
   <div class="blobs" aria-hidden="true">
     <div class="blob" style="left:-160px; top:-140px;"></div>
     <div class="blob b2" style="right:-260px; top:-220px;"></div>
@@ -511,6 +544,7 @@
 
   <div class="wrap">
 
+    <!-- TOP NAV -->
     <div class="topbar">
       <a class="brand" href="#home" data-tab="home" aria-label="Home">
         <span class="first">Shamariah</span>
@@ -542,15 +576,19 @@
       </nav>
     </div>
 
+    <!-- PANEL -->
     <div class="panel">
       <div class="panelInner">
 
+        <!-- LEFT: HEADSHOT -->
         <div class="headshotWrap">
           <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot" />
         </div>
 
+        <!-- RIGHT: PAGES -->
         <div style="min-height:0;">
 
+          <!-- HOME -->
           <section id="page-home" class="page active" aria-label="Home">
             <div class="card" id="home-hero">
               <div class="sectionTitle">
@@ -567,8 +605,8 @@
 
               <div class="demoRow">
                 <div>
-                  <div style="font-weight:900;">Commercial Demo</div>
-                  <div style="font-size:12px; opacity:.75; margin-top:4px;">Conversational • Trustworthy • Lifestyle</div>
+                  <div class="demoName">Commercial Demo</div>
+                  <div class="demoMeta">Conversational • Trustworthy • Lifestyle</div>
                 </div>
                 <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;">
                   <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Download</a>
@@ -599,12 +637,9 @@
                 <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Open / Download</a>
               </p>
 
-              <!-- VISUAL REEL -->
+              <!-- VISUAL REEL (same style as "Commercial Demo") -->
               <div style="height:14px;"></div>
-
-              <div class="sectionTitle" style="padding-top:4px;">
-                <h1 style="font-size:22px; margin:0;">Demo/Visual Reel</h1>
-              </div>
+              <div class="small" style="margin-top:2px;">Visual Reel</div>
 
               <div class="videoCard">
                 <div class="videoWrap">
@@ -621,6 +656,7 @@
             </div>
           </section>
 
+          <!-- HOME STUDIO -->
           <section id="page-studio" class="page" aria-label="Home Studio">
             <div class="card">
               <div class="sectionTitle">
@@ -642,6 +678,7 @@
             </div>
           </section>
 
+          <!-- ABOUT -->
           <section id="page-about" class="page" aria-label="About">
             <div class="card">
               <div class="sectionTitle">
@@ -658,6 +695,7 @@
             </div>
           </section>
 
+          <!-- CONTACT -->
           <section id="page-contact" class="page" aria-label="Contact">
             <div class="card">
               <div class="sectionTitle">
@@ -710,6 +748,7 @@
       contact: "page-contact"
     };
 
+    // Swap the LEFT headshot depending on the active tab
     const headshotEl = document.querySelector(".headshot");
     const headshots = {
       home: "Commercial Headshot.jpg",
@@ -737,7 +776,8 @@
     function tabFromHash(){
       const h = (location.hash || "#home").replace("#","");
 
-      if (h === "demo" || h === "reel" || h === "demo-reel" || h === "demoreel" || h === "visualreel") return "demos";
+      // Normalize common hashes people might type
+      if (h === "demo" || h === "reel" || h === "visualreel" || h === "demo-reel" || h === "demoreel") return "demos";
 
       return map[h] ? h : "home";
     }
