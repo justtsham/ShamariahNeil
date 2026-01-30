@@ -342,7 +342,7 @@
       min-height:0;
     }
 
-    /* LEFT: headshot container stays the same on EVERY tab (except Resume, via JS) */
+    /* LEFT: headshot container stays the same on EVERY tab (but hidden on Resume via JS) */
     .headshotWrap{
       background: rgba(255,255,255,.28);
       border:2px solid var(--borderPink);
@@ -414,9 +414,6 @@
       margin-top:12px;
     }
 
-    .demoName{ font-weight:900; }
-    .demoMeta{ font-size:12px; opacity:.75; margin-top:4px; }
-
     .btn{
       border-radius:999px;
       padding:10px 14px;
@@ -443,27 +440,6 @@
       width:100%;
       margin-top:12px;
       display:block;
-    }
-
-    /* ===== VISUAL REEL (VIDEO) ===== */
-    .videoCard{
-      border-radius:18px;
-      border:2px solid var(--borderPinkSoft);
-      background: rgba(255,255,255,.80);
-      padding:12px;
-      box-shadow: var(--shadow2);
-      margin-top:12px;
-    }
-    .videoWrap{
-      border-radius:14px;
-      overflow:hidden;
-      border:2px solid var(--borderPink);
-      background:#fff;
-    }
-    .videoWrap video{
-      display:block;
-      width:100%;
-      height:auto;
     }
 
     /* Pages */
@@ -535,6 +511,36 @@
     /* HARD LOCK: show home hero only on Home */
     #home-hero{ display:none !important; }
     #page-home.active #home-hero{ display:block !important; }
+
+    /* Resume listing style */
+    .resumeList{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .resumeItem{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px;
+      border-radius:18px;
+      border:2px solid var(--borderPinkSoft);
+      background: rgba(255,255,255,.80);
+    }
+    .resumeTitle{
+      font-weight:900;
+      font-size:16px;
+      line-height:1.25;
+    }
+    .resumeMeta{
+      font-size:12px;
+      opacity:.75;
+      margin-top:4px;
+    }
   </style>
 </head>
 
@@ -634,7 +640,6 @@
                 <h1>Demo/Visual Reel</h1>
               </div>
 
-              <!-- AUDIO DEMO -->
               <div class="small" style="margin-top:2px; font-size:24px; font-weight:700;">
                 Commercial Demo
               </div>
@@ -646,12 +651,12 @@
                 <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Open / Download</a>
               </p>
 
-              <!-- VISUAL REEL -->
               <div style="height:14px;"></div>
 
               <div class="small" style="margin-top:2px; font-size:24px; font-weight:700;">
                 Visual Reel
               </div>
+
               <div class="videoCard">
                 <div class="videoWrap">
                   <video controls preload="metadata" playsinline>
@@ -689,7 +694,7 @@
             </div>
           </section>
 
-          <!-- RESUME -->
+          <!-- RESUME (listed on site + download link) -->
           <section id="page-resume" class="page" aria-label="Resume">
             <div class="card">
               <div class="sectionTitle">
@@ -697,23 +702,24 @@
               </div>
 
               <p class="small" style="margin:0;">
-                View or download my voice-over resume below.
+                Here’s my current voice-over resume:
               </p>
 
-              <div class="demoRow" style="margin-top:14px;">
-                <div>
-                  <div class="demoLabel">Voice-Over Resume (PDF)</div>
-                  <div class="demoMeta">Commercial • Animation • Narration</div>
-                </div>
-
-                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;">
-                  <a class="btn" href="/ShamariahNeil_VOResume.pdf" target="_blank" rel="noopener">View</a>
-                  <a class="btn btnPrimary" href="/ShamariahNeil_VOResume.pdf" download>Download</a>
-                </div>
-              </div>
+              <ul class="resumeList" aria-label="Resume files">
+                <li class="resumeItem">
+                  <div>
+                    <div class="resumeTitle">ShamariahNeil_VOResume.pdf</div>
+                    <div class="resumeMeta">PDF • Voice-Over Resume</div>
+                  </div>
+                  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;">
+                    <a class="btn" href="/ShamariahNeil_VOResume.pdf" target="_blank" rel="noopener">View</a>
+                    <a class="btn btnPrimary" href="/ShamariahNeil_VOResume.pdf" download>Download</a>
+                  </div>
+                </li>
+              </ul>
 
               <p class="small" style="margin-top:10px; opacity:.75;">
-                (Make sure your file is uploaded to your site as <strong>ShamariahNeil_VOResume.pdf</strong>)
+                
               </p>
             </div>
           </section>
@@ -798,7 +804,6 @@
       home: "Commercial Headshot.jpg",
       demos: "Shamariah Neil Headshot.jpg",
       studio: "Commercial Headshot.jpg",
-      resume: "", // (hidden anyway)
       about: "Commercial Headshot.jpg",
       contact: "Commercial Headshot.jpg"
     };
@@ -853,3 +858,4 @@
   </script>
 </body>
 </html>
+
