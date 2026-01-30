@@ -342,7 +342,7 @@
       min-height:0;
     }
 
-    /* LEFT: headshot container stays the same on EVERY tab */
+    /* LEFT: headshot container stays the same on EVERY tab (except Resume, via JS) */
     .headshotWrap{
       background: rgba(255,255,255,.28);
       border:2px solid var(--borderPink);
@@ -526,12 +526,11 @@
       .brand .first, .brand .last{ font-size:40px; }
     }
 
-.demoLabel{
-  font-size:24px;
-  font-weight:700;
-  margin-top:2px;
-}
-
+    .demoLabel{
+      font-size:24px;
+      font-weight:700;
+      margin-top:2px;
+    }
 
     /* HARD LOCK: show home hero only on Home */
     #home-hero{ display:none !important; }
@@ -562,6 +561,7 @@
         <a class="tab" href="#home" data-tab="home">Home</a>
         <a class="tab" href="#demos" data-tab="demos">Demo/Visual Reel</a>
         <a class="tab" href="#studio" data-tab="studio">Home Studio</a>
+        <a class="tab" href="#resume" data-tab="resume">Resume</a>
         <a class="tab" href="#about" data-tab="about">About</a>
         <a class="tab" href="#contact" data-tab="contact">Contact Me</a>
 
@@ -587,7 +587,7 @@
     <div class="panel">
       <div class="panelInner">
 
-        <!-- LEFT: HEADSHOT -->
+        <!-- LEFT: HEADSHOT (hidden on Resume via JS) -->
         <div class="headshotWrap">
           <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot" />
         </div>
@@ -612,7 +612,7 @@
 
               <div class="demoRow">
                 <div>
-                 <div class="demoLabel">Commercial Demo</div>
+                  <div class="demoLabel">Commercial Demo</div>
                   <div class="demoMeta">Conversational • Trustworthy • Lifestyle</div>
                 </div>
                 <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;">
@@ -636,8 +636,8 @@
 
               <!-- AUDIO DEMO -->
               <div class="small" style="margin-top:2px; font-size:24px; font-weight:700;">
-  Commercial Demo
-</div>
+                Commercial Demo
+              </div>
               <audio controls preload="metadata" playsinline src="/commercial-demo.mp3?v=2">
                 Your browser does not support the audio element.
               </audio>
@@ -646,28 +646,24 @@
                 <a class="btn" href="/commercial-demo.mp3" target="_blank" rel="noopener">Open / Download</a>
               </p>
 
-              <!-- Replace JUST this part inside your Demo/Visual Reel section -->
+              <!-- VISUAL REEL -->
+              <div style="height:14px;"></div>
 
-<!-- VISUAL REEL -->
-<div style="height:14px;"></div>
+              <div class="small" style="margin-top:2px; font-size:24px; font-weight:700;">
+                Visual Reel
+              </div>
+              <div class="videoCard">
+                <div class="videoWrap">
+                  <video controls preload="metadata" playsinline>
+                    <source src="/shamariahneil_visualreel.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
 
-<!-- ✅ Make it match the "Commercial Demo" label style -->
-<div class="small" style="margin-top:2px; font-size:24px; font-weight:700;">
-  Visual Reel
-</div>
-<div class="videoCard">
-  <div class="videoWrap">
-    <video controls preload="metadata" playsinline>
-      <source src="/shamariahneil_visualreel.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <p class="small" style="margin:10px 0 0;">
-    <a class="btn" href="/shamariahneil_visualreel.mp4" target="_blank" rel="noopener">Open / Download</a>
-  </p>
-</div>
-
+                <p class="small" style="margin:10px 0 0;">
+                  <a class="btn" href="/shamariahneil_visualreel.mp4" target="_blank" rel="noopener">Open / Download</a>
+                </p>
+              </div>
             </div>
           </section>
 
@@ -690,6 +686,35 @@
               </ul>
 
               <img class="studioImg" src="home studio.jpeg" alt="Home studio setup" />
+            </div>
+          </section>
+
+          <!-- RESUME -->
+          <section id="page-resume" class="page" aria-label="Resume">
+            <div class="card">
+              <div class="sectionTitle">
+                <h1>Resume</h1>
+              </div>
+
+              <p class="small" style="margin:0;">
+                View or download my voice-over resume below.
+              </p>
+
+              <div class="demoRow" style="margin-top:14px;">
+                <div>
+                  <div class="demoLabel">Voice-Over Resume (PDF)</div>
+                  <div class="demoMeta">Commercial • Animation • Narration</div>
+                </div>
+
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;">
+                  <a class="btn" href="/ShamariahNeil_VOResume.pdf" target="_blank" rel="noopener">View</a>
+                  <a class="btn btnPrimary" href="/ShamariahNeil_VOResume.pdf" download>Download</a>
+                </div>
+              </div>
+
+              <p class="small" style="margin-top:10px; opacity:.75;">
+                (Make sure your file is uploaded to your site as <strong>ShamariahNeil_VOResume.pdf</strong>)
+              </p>
             </div>
           </section>
 
@@ -759,22 +784,37 @@
       home: "page-home",
       demos: "page-demos",
       studio: "page-studio",
+      resume: "page-resume",
       about: "page-about",
       contact: "page-contact"
     };
 
-    // Swap the LEFT headshot depending on the active tab
+    // Elements for toggling the left headshot column
     const headshotEl = document.querySelector(".headshot");
+    const headshotWrapEl = document.querySelector(".headshotWrap");
+
+    // Swap the LEFT headshot depending on the active tab
     const headshots = {
       home: "Commercial Headshot.jpg",
       demos: "Shamariah Neil Headshot.jpg",
       studio: "Commercial Headshot.jpg",
+      resume: "", // (hidden anyway)
       about: "Commercial Headshot.jpg",
       contact: "Commercial Headshot.jpg"
     };
 
     function setHeadshot(tab){
-      if (!headshotEl) return;
+      if (!headshotEl || !headshotWrapEl) return;
+
+      // ✅ Hide picture entirely on Resume tab
+      if (tab === "resume") {
+        headshotWrapEl.style.display = "none";
+        return;
+      }
+
+      // Show on all other tabs
+      headshotWrapEl.style.display = "";
+
       const src = headshots[tab] || headshots.home;
       headshotEl.src = src;
       headshotEl.alt = tab === "demos" ? "Shamariah Neil Headshot" : "Commercial Headshot";
