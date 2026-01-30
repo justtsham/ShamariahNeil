@@ -342,7 +342,7 @@
       min-height:0;
     }
 
-    /* LEFT: headshot container stays the same on EVERY tab (but hidden on Resume via JS) */
+    /* LEFT: headshot container stays the same on EVERY tab (hidden on Resume via JS) */
     .headshotWrap{
       background: rgba(255,255,255,.28);
       border:2px solid var(--borderPink);
@@ -440,6 +440,33 @@
       width:100%;
       margin-top:12px;
       display:block;
+    }
+
+    /* ===== VISUAL REEL (VIDEO) — FIXED (no crop, no lag) ===== */
+    .videoCard{
+      border-radius:18px;
+      border:2px solid var(--borderPinkSoft);
+      background: rgba(255,255,255,.80);
+      padding:12px;
+      box-shadow: var(--shadow2);
+      margin-top:12px;
+    }
+
+    .videoWrap{
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 2px solid var(--borderPink);
+      background: #000; /* black letterbox looks premium */
+    }
+
+    .videoWrap video{
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* 👈 prevents cropping */
+      display: block;
     }
 
     /* Pages */
@@ -659,8 +686,13 @@
 
               <div class="videoCard">
                 <div class="videoWrap">
-                  <video controls preload="metadata" playsinline>
-                    <source src="/shamariahneil_visualreel.mp4" type="video/mp4">
+                  <video
+                    controls
+                    preload="metadata"
+                    playsinline
+                    disablePictureInPicture
+                  >
+                    <source src="/shamariahneil_visualreel.mp4#t=0.1" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -858,4 +890,3 @@
   </script>
 </body>
 </html>
-
