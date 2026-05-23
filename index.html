@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shamariah Neil | Voice Actor</title>
-  <meta name="description" content="Shamariah Neil — Voice Actor" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +19,6 @@
       --pink1:#f6a6c9;
       --pink2:#fbd3e6;
 
-      --softPink: rgba(246,166,201,.14);
-      --softPink2: rgba(251,211,230,.16);
-
       --text:#2a0820;
       --card: rgba(255,255,255,.86);
 
@@ -31,43 +27,37 @@
 
       --shadow: 0 24px 60px rgba(0,0,0,.12);
       --shadow2: 0 12px 26px rgba(0,0,0,.10);
-
-      --ring: 0 0 0 6px rgba(246,166,201,.18);
     }
 
-    *{ box-sizing:border-box; }
-    html, body { height:100%; }
+    *{
+      box-sizing:border-box;
+    }
+
+    html, body{
+      height:100%;
+    }
 
     body{
       margin:0;
       font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--text);
-      overflow-x:hidden;
-      position:relative;
 
       background:
         radial-gradient(1100px 820px at 12% 12%, rgba(246,166,201,.34), transparent 60%),
         radial-gradient(1000px 760px at 88% 18%, rgba(251,211,230,.32), transparent 62%),
-        radial-gradient(900px 740px at 22% 92%, rgba(246,166,201,.22), transparent 64%),
-        radial-gradient(820px 700px at 92% 88%, rgba(246,166,201,.14), transparent 66%),
-        linear-gradient(135deg, rgba(246,166,201,.10), transparent 52%),
         linear-gradient(180deg, var(--cream), var(--cream2));
 
       background-attachment: fixed;
     }
 
-    a{ color:inherit; }
+    a{
+      color:inherit;
+    }
 
     .wrap{
       max-width:1100px;
       margin:0 auto;
       padding:18px;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      position:relative;
-      z-index:1;
     }
 
     .topbar{
@@ -93,7 +83,6 @@
       font-size:58px;
       line-height:1;
       color:#e05a97;
-      letter-spacing:.4px;
     }
 
     nav{
@@ -101,51 +90,39 @@
       align-items:center;
       gap:16px;
       flex-wrap:wrap;
-      justify-content:flex-end;
     }
 
     nav a.tab{
       text-decoration:none;
       font-weight:900;
       font-size:14px;
-      opacity:.92;
       padding:8px 10px;
       border-radius:999px;
-      transition: transform .15s ease, background .15s ease;
     }
 
     nav a.tab:hover{
       background: rgba(255,255,255,.65);
-      transform: translateY(-1px);
     }
 
     .panel{
-      position:relative;
       border-radius:30px;
       overflow:hidden;
       box-shadow: var(--shadow);
       border:2px solid var(--borderPink);
+
       background:
         radial-gradient(900px 520px at 80% 10%, rgba(246,166,201,.18), transparent 60%),
         linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,.30));
 
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-
-      flex:1;
-      min-height:0;
     }
 
     .panelInner{
-      position:relative;
-      z-index:1;
       padding:18px;
       display:grid;
       grid-template-columns: 360px 1fr;
       gap:18px;
-      align-items:start;
-      height:100%;
-      min-height:0;
     }
 
     .headshotWrap{
@@ -153,15 +130,11 @@
       border:2px solid var(--borderPink);
       border-radius:28px;
       padding:12px;
-      height:fit-content;
       box-shadow: var(--shadow2);
     }
 
     .headshot{
       width:100%;
-      max-height:520px;
-      height:auto;
-      object-fit:cover;
       border-radius:24px;
       border:2px solid var(--borderPink);
       display:block;
@@ -174,15 +147,10 @@
       padding:18px;
       border:2px solid var(--borderPink);
       box-shadow: var(--shadow2);
-      max-width:760px;
     }
 
     .sectionTitle{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:14px;
-      padding:2px 2px 10px;
+      padding-bottom:10px;
     }
 
     h1{
@@ -193,8 +161,7 @@
 
     .small{
       font-size:14px;
-      opacity:.88;
-      line-height:1.65;
+      line-height:1.7;
     }
 
     .page{
@@ -226,6 +193,8 @@
       background: var(--pink1);
       border-radius:999px;
     }
+
+    /* POLICY STYLING */
 
     [data-custom-class='body'],
     [data-custom-class='body'] * {
@@ -263,6 +232,14 @@
       font-weight:700 !important;
     }
 
+    @media (max-width: 980px){
+
+      .panelInner{
+        grid-template-columns:1fr;
+      }
+
+    }
+
   </style>
 </head>
 
@@ -287,7 +264,7 @@
       <a class="tab" href="#about" data-tab="about">About</a>
       <a class="tab" href="#contact" data-tab="contact">Contact Me</a>
 
-      <!-- NEW PRIVACY POLICY TAB -->
+      <!-- PRIVACY TAB -->
       <a class="tab" href="#privacy" data-tab="privacy">
         Privacy Policy
       </a>
@@ -296,19 +273,22 @@
 
   </div>
 
+  <!-- PANEL -->
   <div class="panel">
+
     <div class="panelInner">
 
       <!-- LEFT -->
       <div class="headshotWrap">
-        <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot" />
+        <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot">
       </div>
 
       <!-- RIGHT -->
-      <div style="min-height:0;">
+      <div>
 
         <!-- HOME -->
         <section id="page-home" class="page active">
+
           <div class="card">
 
             <div class="sectionTitle">
@@ -321,10 +301,12 @@
             </p>
 
           </div>
+
         </section>
 
         <!-- CONTACT -->
         <section id="page-contact" class="page">
+
           <div class="card">
 
             <div class="sectionTitle">
@@ -336,6 +318,7 @@
             </p>
 
           </div>
+
         </section>
 
         <!-- PRIVACY POLICY -->
@@ -349,17 +332,38 @@
 
             <div class="privacyWrap">
 
-<style>
-[data-custom-class='body'], [data-custom-class='body'] * {
-  background: transparent !important;
-}
-</style>
+              <!-- START OF POLICY -->
 
-<div data-custom-class="body">
+              <div data-custom-class="body">
 
-<!-- PASTE THE REST OF YOUR PRIVACY POLICY HTML HERE -->
+                <h2 data-custom-class="title">
+                  PRIVACY POLICY
+                </h2>
 
-</div>
+                <p data-custom-class="body_text">
+                  Last updated May 23, 2026
+                </p>
+
+                <p data-custom-class="body_text">
+                  This Privacy Notice for Voice Over Vault describes
+                  how and why we might collect, store, use, and/or
+                  share your information when you use our services.
+                </p>
+
+                <p data-custom-class="body_text">
+                  Questions or concerns? Contact us at:
+                  <a
+                    data-custom-class="link"
+                    href="mailto:support@vovault.net">
+                    support@vovault.net
+                  </a>
+                </p>
+
+                <!-- PASTE THE REST OF YOUR PRIVACY POLICY HERE -->
+
+              </div>
+
+              <!-- END OF POLICY -->
 
             </div>
 
@@ -368,7 +372,9 @@
         </section>
 
       </div>
+
     </div>
+
   </div>
 
 </div>
@@ -390,12 +396,14 @@ function showTab(tab){
   const id = map[tab] || map.home;
 
   document.querySelectorAll(".page")
-    .forEach(s => s.classList.remove("active"));
+    .forEach(page => {
+      page.classList.remove("active");
+    });
 
-  const el = document.getElementById(id);
+  const activePage = document.getElementById(id);
 
-  if(el){
-    el.classList.add("active");
+  if(activePage){
+    activePage.classList.add("active");
   }
 }
 
@@ -419,10 +427,10 @@ document.addEventListener("click", (e) => {
 
 window.addEventListener("hashchange", () => {
 
-  const h = (location.hash || "#home")
+  const hash = (location.hash || "#home")
     .replace("#","");
 
-  showTab(h);
+  showTab(hash);
 
 });
 
