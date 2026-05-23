@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shamariah Neil | Voice Actor</title>
+  <meta name="description" content="Shamariah Neil — Voice Actor" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,186 +13,255 @@
 
   <style>
 
-:root{
-  --cream:#f9f3ec;
-  --cream2:#fffaf5;
-  --pink1:#f6a6c9;
-  --pink2:#fbd3e6;
-  --text:#2a0820;
-  --card: rgba(255,255,255,.86);
-  --borderPink: rgba(246,166,201,.78);
-  --borderPinkSoft: rgba(246,166,201,.55);
-  --shadow: 0 24px 60px rgba(0,0,0,.12);
-  --shadow2: 0 12px 26px rgba(0,0,0,.10);
-}
+    :root{
+      --cream:#f9f3ec;
+      --cream2:#fffaf5;
 
-*{
-  box-sizing:border-box;
-}
+      --pink1:#f6a6c9;
+      --pink2:#fbd3e6;
 
-body{
-  margin:0;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  color:var(--text);
+      --softPink: rgba(246,166,201,.14);
+      --softPink2: rgba(251,211,230,.16);
 
-  background:
-    radial-gradient(1100px 820px at 12% 12%, rgba(246,166,201,.34), transparent 60%),
-    radial-gradient(1000px 760px at 88% 18%, rgba(251,211,230,.32), transparent 62%),
-    linear-gradient(180deg, var(--cream), var(--cream2));
+      --text:#2a0820;
+      --card: rgba(255,255,255,.86);
 
-  background-attachment: fixed;
-}
+      --borderPink: rgba(246,166,201,.78);
+      --borderPinkSoft: rgba(246,166,201,.55);
 
-.wrap{
-  max-width:1100px;
-  margin:0 auto;
-  padding:18px;
-}
+      --shadow: 0 24px 60px rgba(0,0,0,.12);
+      --shadow2: 0 12px 26px rgba(0,0,0,.10);
 
-.topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-  padding:6px 6px 10px;
-  flex-wrap:wrap;
-}
+      --ring: 0 0 0 6px rgba(246,166,201,.18);
+    }
 
-.brand{
-  text-decoration:none;
-  display:flex;
-  align-items:baseline;
-  gap:10px;
-}
+    *{ box-sizing:border-box; }
+    html, body { height:100%; }
 
-.brand .first,
-.brand .last{
-  font-family:'Allura', cursive;
-  font-size:58px;
-  color:#e05a97;
-}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      overflow-x:hidden;
+      position:relative;
 
-nav{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  flex-wrap:wrap;
-}
+      background:
+        radial-gradient(1100px 820px at 12% 12%, rgba(246,166,201,.34), transparent 60%),
+        radial-gradient(1000px 760px at 88% 18%, rgba(251,211,230,.32), transparent 62%),
+        radial-gradient(900px 740px at 22% 92%, rgba(246,166,201,.22), transparent 64%),
+        radial-gradient(820px 700px at 92% 88%, rgba(246,166,201,.14), transparent 66%),
+        linear-gradient(135deg, rgba(246,166,201,.10), transparent 52%),
+        linear-gradient(180deg, var(--cream), var(--cream2));
 
-nav a.tab{
-  text-decoration:none;
-  font-weight:900;
-  font-size:14px;
-  padding:8px 10px;
-  border-radius:999px;
-  color:var(--text);
-}
+      background-attachment: fixed;
+    }
 
-nav a.tab:hover{
-  background: rgba(255,255,255,.65);
-}
+    a{ color:inherit; }
 
-.panel{
-  border-radius:30px;
-  overflow:hidden;
-  box-shadow: var(--shadow);
-  border:2px solid var(--borderPink);
-  background:
-    radial-gradient(900px 520px at 80% 10%, rgba(246,166,201,.18), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,.30));
-  padding:18px;
-}
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:18px;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      position:relative;
+      z-index:1;
+    }
 
-.page{
-  display:none;
-}
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:6px 6px 10px;
+      flex-wrap:wrap;
+    }
 
-.page.active{
-  display:block;
-}
+    .brand{
+      text-decoration:none;
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      white-space:nowrap;
+    }
 
-.card{
-  background: var(--card);
-  border-radius:24px;
-  padding:18px;
-  border:2px solid var(--borderPink);
-  box-shadow: var(--shadow2);
-}
+    .brand .first,
+    .brand .last{
+      font-family:'Allura', cursive;
+      font-size:58px;
+      line-height:1;
+      color:#e05a97;
+      letter-spacing:.4px;
+    }
 
-.sectionTitle h1{
-  margin:0;
-  font-family:'Playfair Display', serif;
-  font-size:30px;
-}
+    nav{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
 
-/* ===== PRIVACY POLICY PAGE ===== */
+    nav a.tab{
+      text-decoration:none;
+      font-weight:900;
+      font-size:14px;
+      opacity:.92;
+      padding:8px 10px;
+      border-radius:999px;
+      transition: transform .15s ease, background .15s ease;
+    }
 
-.privacyWrap{
-  margin-top:12px;
-  padding:24px;
-  border-radius:20px;
-  border:2px solid var(--borderPinkSoft);
-  background: rgba(255,255,255,.88);
-  max-height:70vh;
-  overflow-y:auto;
-  box-shadow: var(--shadow2);
-}
+    nav a.tab:hover{
+      background: rgba(255,255,255,.65);
+      transform: translateY(-1px);
+    }
 
-.privacyWrap::-webkit-scrollbar{
-  width:10px;
-}
+    .panel{
+      position:relative;
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border:2px solid var(--borderPink);
+      background:
+        radial-gradient(900px 520px at 80% 10%, rgba(246,166,201,.18), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,.30));
 
-.privacyWrap::-webkit-scrollbar-thumb{
-  background: var(--pink1);
-  border-radius:999px;
-}
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
 
-/* PRIVACY POLICY CUSTOM STYLING */
+      flex:1;
+      min-height:0;
+    }
 
-[data-custom-class='body'],
-[data-custom-class='body'] * {
-  background: transparent !important;
-}
+    .panelInner{
+      position:relative;
+      z-index:1;
+      padding:18px;
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap:18px;
+      align-items:start;
+      height:100%;
+      min-height:0;
+    }
 
-[data-custom-class='title'],
-[data-custom-class='title'] * {
-  font-family: 'Playfair Display', serif !important;
-  color: #2a0820 !important;
-}
+    .headshotWrap{
+      background: rgba(255,255,255,.28);
+      border:2px solid var(--borderPink);
+      border-radius:28px;
+      padding:12px;
+      height:fit-content;
+      box-shadow: var(--shadow2);
+    }
 
-[data-custom-class='heading_1'],
-[data-custom-class='heading_1'] * {
-  font-family: 'Playfair Display', serif !important;
-  color: #2a0820 !important;
-}
+    .headshot{
+      width:100%;
+      max-height:520px;
+      height:auto;
+      object-fit:cover;
+      border-radius:24px;
+      border:2px solid var(--borderPink);
+      display:block;
+      background:#fff;
+    }
 
-[data-custom-class='heading_2'],
-[data-custom-class='heading_2'] * {
-  font-family: 'Playfair Display', serif !important;
-  color: #2a0820 !important;
-}
+    .card{
+      background: var(--card);
+      border-radius:24px;
+      padding:18px;
+      border:2px solid var(--borderPink);
+      box-shadow: var(--shadow2);
+      max-width:760px;
+    }
 
-[data-custom-class='body_text'],
-[data-custom-class='body_text'] * {
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial !important;
-  color: #4b3040 !important;
-  line-height: 1.7 !important;
-}
+    .sectionTitle{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      padding:2px 2px 10px;
+    }
 
-[data-custom-class='link'],
-[data-custom-class='link'] * {
-  color: #d85a95 !important;
-  font-weight:700 !important;
-}
+    h1{
+      margin:0;
+      font-family:'Playfair Display', serif;
+      font-size:30px;
+    }
 
-@media (max-width: 640px){
+    .small{
+      font-size:14px;
+      opacity:.88;
+      line-height:1.65;
+    }
 
-  .brand .first,
-  .brand .last{
-    font-size:40px;
-  }
+    .page{
+      display:none;
+    }
 
-}
+    .page.active{
+      display:block;
+    }
+
+    /* ===== PRIVACY POLICY ===== */
+
+    .privacyWrap{
+      margin-top:12px;
+      padding:24px;
+      border-radius:20px;
+      border:2px solid var(--borderPinkSoft);
+      background: rgba(255,255,255,.88);
+      max-height:70vh;
+      overflow-y:auto;
+      box-shadow: var(--shadow2);
+    }
+
+    .privacyWrap::-webkit-scrollbar{
+      width:10px;
+    }
+
+    .privacyWrap::-webkit-scrollbar-thumb{
+      background: var(--pink1);
+      border-radius:999px;
+    }
+
+    [data-custom-class='body'],
+    [data-custom-class='body'] * {
+      background: transparent !important;
+    }
+
+    [data-custom-class='title'],
+    [data-custom-class='title'] * {
+      font-family:'Playfair Display', serif !important;
+      color:#2a0820 !important;
+    }
+
+    [data-custom-class='heading_1'],
+    [data-custom-class='heading_1'] * {
+      font-family:'Playfair Display', serif !important;
+      color:#2a0820 !important;
+    }
+
+    [data-custom-class='heading_2'],
+    [data-custom-class='heading_2'] * {
+      font-family:'Playfair Display', serif !important;
+      color:#2a0820 !important;
+    }
+
+    [data-custom-class='body_text'],
+    [data-custom-class='body_text'] * {
+      color:#4b3040 !important;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial !important;
+      line-height:1.7 !important;
+    }
+
+    [data-custom-class='link'],
+    [data-custom-class='link'] * {
+      color:#d85a95 !important;
+      font-weight:700 !important;
+    }
 
   </style>
 </head>
@@ -211,24 +281,13 @@ nav a.tab:hover{
     <nav>
 
       <a class="tab" href="#home" data-tab="home">Home</a>
+      <a class="tab" href="#demos" data-tab="demos">Demo/Visual Reel</a>
+      <a class="tab" href="#studio" data-tab="studio">Home Studio</a>
+      <a class="tab" href="#resume" data-tab="resume">Resume</a>
+      <a class="tab" href="#about" data-tab="about">About</a>
+      <a class="tab" href="#contact" data-tab="contact">Contact Me</a>
 
-      <a class="tab" href="#demos" data-tab="demos">
-        Demo/Visual Reel
-      </a>
-
-      <a class="tab" href="#studio" data-tab="studio">
-        Home Studio
-      </a>
-
-      <a class="tab" href="#resume" data-tab="resume">
-        Resume
-      </a>
-
-      <a class="tab" href="#contact" data-tab="contact">
-        Contact Me
-      </a>
-
-      <!-- NEW TAB -->
+      <!-- NEW PRIVACY POLICY TAB -->
       <a class="tab" href="#privacy" data-tab="privacy">
         Privacy Policy
       </a>
@@ -238,83 +297,136 @@ nav a.tab:hover{
   </div>
 
   <div class="panel">
+    <div class="panelInner">
 
-    <!-- HOME -->
-    <section id="page-home" class="page active">
-      <div class="card">
-        <div class="sectionTitle">
-          <h1>Welcome</h1>
-        </div>
-
-        <p>
-          Professional voice actor specializing in commercial,
-          animation, gaming, and narration.
-        </p>
+      <!-- LEFT -->
+      <div class="headshotWrap">
+        <img class="headshot" src="Commercial Headshot.jpg" alt="Commercial Headshot" />
       </div>
-    </section>
 
-    <!-- PRIVACY POLICY PAGE -->
-    <section id="page-privacy" class="page">
+      <!-- RIGHT -->
+      <div style="min-height:0;">
 
-      <div class="card">
+        <!-- HOME -->
+        <section id="page-home" class="page active">
+          <div class="card">
 
-        <div class="sectionTitle">
-          <h1>Privacy Policy</h1>
-        </div>
+            <div class="sectionTitle">
+              <h1>Voice Actor</h1>
+            </div>
 
-        <div class="privacyWrap">
+            <p class="small">
+              Professional voice actor specializing in commercial,
+              animation, gaming, and narration.
+            </p>
 
-<!-- PASTE YOUR FULL PRIVACY POLICY HTML HERE -->
-<!-- Starting with: -->
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="page-contact" class="page">
+          <div class="card">
+
+            <div class="sectionTitle">
+              <h1>Contact Me</h1>
+            </div>
+
+            <p class="small">
+              shamariahneilvo@gmail.com
+            </p>
+
+          </div>
+        </section>
+
+        <!-- PRIVACY POLICY -->
+        <section id="page-privacy" class="page">
+
+          <div class="card">
+
+            <div class="sectionTitle">
+              <h1>Privacy Policy</h1>
+            </div>
+
+            <div class="privacyWrap">
 
 <style>
 [data-custom-class='body'], [data-custom-class='body'] * {
-
+  background: transparent !important;
 }
 </style>
 
 <div data-custom-class="body">
 
-<!-- ALL OF YOUR PRIVACY POLICY CONTENT -->
+<!-- PASTE THE REST OF YOUR PRIVACY POLICY HTML HERE -->
 
 </div>
 
-        </div>
+            </div>
+
+          </div>
+
+        </section>
 
       </div>
-
-    </section>
-
+    </div>
   </div>
 
 </div>
 
 <script>
 
-const tabs = document.querySelectorAll('[data-tab]');
-const pages = document.querySelectorAll('.page');
+const map = {
+  home: "page-home",
+  demos: "page-demos",
+  studio: "page-studio",
+  resume: "page-resume",
+  about: "page-about",
+  contact: "page-contact",
+  privacy: "page-privacy"
+};
 
-tabs.forEach(tab => {
+function showTab(tab){
 
-  tab.addEventListener('click', (e) => {
+  const id = map[tab] || map.home;
 
-    e.preventDefault();
+  document.querySelectorAll(".page")
+    .forEach(s => s.classList.remove("active"));
 
-    const target = tab.dataset.tab;
+  const el = document.getElementById(id);
 
-    pages.forEach(page => {
-      page.classList.remove('active');
-    });
+  if(el){
+    el.classList.add("active");
+  }
+}
 
-    const activePage = document.getElementById(`page-${target}`);
+document.addEventListener("click", (e) => {
 
-    if(activePage){
-      activePage.classList.add('active');
-    }
+  const a = e.target.closest("a[data-tab]");
 
-  });
+  if(!a) return;
+
+  const tab = a.getAttribute("data-tab");
+
+  if(!tab) return;
+
+  e.preventDefault();
+
+  history.pushState(null, "", `#${tab}`);
+
+  showTab(tab);
 
 });
+
+window.addEventListener("hashchange", () => {
+
+  const h = (location.hash || "#home")
+    .replace("#","");
+
+  showTab(h);
+
+});
+
+showTab("home");
 
 </script>
 
